@@ -1,0 +1,38 @@
+@import url("./colors.css");
+@import url("./styles/button.css");
+@import url("./styles/menu_button.css");
+@import url("./styles/module.css");
+@import url("./styles/tray_menu.css");
+
+
+* {
+    border: none;
+    font-family: "Noto Arabic Sans";
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: transparent;
+    background: transparent;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background-color: @surface;
+    opacity: 0.95;
+    border: 0px solid transparent;
+    margin: 3px 3px 2px 3px;
+    padding: 0px
+}
+
+.modules-left {
+  border-radius : 0px 15px 0px 15px;
+}
+.modules-center {
+  border-radius : 0px 0px 15px 15px;
+}
+.modules-right {
+  border-radius : 15px 0px 15px 0px;
+}

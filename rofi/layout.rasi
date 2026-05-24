@@ -1,0 +1,175 @@
+/* -- Main layout file*/
+
+/**======Main configs===========*/
+configuration {
+    icon-theme : "Papirus-Dark";
+    show-icons:  true;
+	kb-cancel: "Escape,MousePrimary";
+	hover-select: true;
+	me-select-entry: "";
+	me-accept-entry: [ MousePrimary, MouseSecondary, MouseDPrimary ];
+}
+/** ===== Main Window ===== **/
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    x-offset:                    0px;
+    y-offset:                    0px;
+
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      1px solid;
+    cursor:                      "default";
+    border-radius:               30px;
+    border-color:                @outline;
+}
+
+/** ==== Main Box ==== **/
+mainbox {
+    enabled:                     true;
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px 0px 0px 0px;
+    border-color:                transparent;
+    background-color:            @surface;
+}
+
+/** ===== Inputbar ==== **/
+inputbar {
+    enabled:                     true;
+    spacing:                     0px;
+    margin:                      0px 0px 10px 0px;
+    border-color:                @outline;
+    padding:                     7% 1%;
+    border:                      0px 0px 0px 0px solid;
+    border-radius:               0px;
+    background-color:            @surface-container-high;
+    text-color:                  @on-surface-variant;
+    
+    background-image:           url("/home/marouane/.config/cache/rofi_bg.png", width);
+}
+
+textbox-prompt-colon {
+    enabled:                     true;
+    background-color:            inherit;
+    text-color:                  inherit;
+    border-radius:               30px;
+    padding:                     5px 15px;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}
+entry {
+    enabled:                     true;
+    background-color:            inherit;
+    text-color:                  inherit;
+    border-radius:               30px;
+    padding:                     0.2em 1em;
+    cursor:                      text;
+    vertical-align:              0.5;
+    hide-cursor-on-empty:        true;
+    placeholder-color:           @on-surface-variant;
+}
+/** ===== Mod switcher ===== **/
+mode-switcher{
+    enabled:                     true;
+    spacing:                     10px;
+    background-color:            transparent;
+}
+button {
+    width:                       80px;
+    border-radius:               30px;
+    background-color:            @surface-container-highest;
+    text-color:                  @on-surface-variant;
+    cursor:                      pointer;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}
+button selected {
+    background-color:            @secondary;
+    text-color:                  @on-secondary;
+}
+
+/** ===== Listview ===== **/
+listview {
+    enabled:                     true;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+
+    margin:                      0px;
+    padding:                     10px;
+    text-color:                  @on-surface;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                transparent;
+    background-color:            transparent;
+    cursor:                      "default";
+}
+
+
+
+/** ===== Elements ===== **/
+element {
+    enabled:                     true;
+    spacing:                     10px;
+    padding:                     10px;
+    border:                      0px solid;
+    border-radius:               30px;
+    margin:                      0px;
+    border-color:                transparent;
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      pointer;
+}
+element normal.normal,
+element alternate.normal{
+    background-color:            transparent;
+    text-color:                  @inherit;
+}
+element selected.normal,
+element selected.alternate{
+    background-color:            @primary;
+    text-color:                  @on-primary;
+}
+element urgent.normal,
+element urgent.alternate{
+    background-color:            @tertiary;
+    text-color:                  @on-tertiary;
+}
+element-icon {
+    background-color:            inherit;
+    text-color:                  inherit;
+    cursor:                      inherit;
+}
+element-text {
+    background-color:            inherit;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    cursor:                      inherit;
+}
+
+/** ===== Message ===== **/
+error-message {
+    padding:                     15px;
+    border-radius:               12px;
+    border:                      2px solid;
+    border-color:                @primary;
+    background-color:            @error;
+    text-color:                  @on-error;
+}
+textbox {
+    background-color:            @surface-container;
+    text-color:                  @on-surface;
+    horizontal-align:            0.0;
+    highlight:                   none;
+    vertical-align:              0.5;
+}

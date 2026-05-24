@@ -1,0 +1,44 @@
+/* Style for ALL open window icons (default state) */
+button {
+    padding: 7px 7px;
+    margin:  0px 2px;
+    background-color: transparent; 
+    color: @on_surface;
+    border: 0px;
+    border-radius: 100px;
+}
+
+button.active {
+    color: @primary;
+}
+
+button:hover,
+button.active:hover{
+    background-color: @primary_container;
+    color: @primary;
+}
+
+/* If an app is minimized (optional state style) */
+button.minimized {
+    opacity: 0.5;
+}
+
+@keyframes button_animation {
+    0%{
+        opacity: 0;
+        min-width: 0;
+        padding: 0;
+        margin: 0;
+    }
+    50%{
+        opacity: 0;
+        min-width: 0;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+
+button {
+    animation: button_animation 0.15s ease-in-out 0s;
+}

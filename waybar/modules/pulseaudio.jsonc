@@ -1,0 +1,11 @@
+{
+    "pulseaudio": {
+        "format": "{icon}  {volume}% ",
+        "format-muted": "󰝟  Muted",
+        "format-icons": ["󰕿", "󰖀", "󰕾"],
+        "scroll-step": 5, // Allows you to scroll over the button to change volume
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle", // Toggles mute via WirePlumber
+        "on-click-right": "pwvucontrol", // Opens full mixer GUI on right-click
+        "tooltip-format": "{desc}"
+    }
+}

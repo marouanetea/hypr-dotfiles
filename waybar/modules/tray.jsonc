@@ -1,0 +1,6 @@
+{
+        "tray": {
+        "icon-size": 16,
+        "spacing": 8  // Adds 8px of space between each tray element
+    }
+}

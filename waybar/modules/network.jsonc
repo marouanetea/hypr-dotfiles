@@ -1,0 +1,10 @@
+{
+    "network": {
+        "interval": 2,
+        "format-wifi": 		"  󰕒 {bandwidthUpBytes} | 󰇚 {bandwidthDownBytes}",
+        "format-ethernet": 	"󰈀  󰕒 {bandwidthUpBytes} | 󰇚 {bandwidthDownBytes}",
+        "format-disconnected": "⚠ Disconnected",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "on-click": ""
+    }
+}

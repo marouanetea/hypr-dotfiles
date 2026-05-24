@@ -1,0 +1,34 @@
+/* The main dropdown menu container */
+menu {
+    background-color: @surface; /* Your background color */
+    border: 0px;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+/* Individual rows/items inside the menu */
+menu menuitem {
+    color: @on_surface; /* Text color */
+    padding: 4px 12px;
+    transition: all 0.2s ease;
+}
+
+/* When you hover over an item */
+menu menuitem:hover {
+    background-color: @primary; /* Highlight color */
+    color: @on_primary; /* Text color on hover */
+    border-radius: 4px;
+}
+
+/* Disabled items (like unclickable separators or grayed-out options) */
+menu menuitem:disabled {
+    color: @on_surface_variant ;
+}
+
+/* GTK separator lines  */
+menu separator {
+    background-color: @surface_container; /* Line color */
+    min-height: 1px;           /* Thickness of the line */
+    margin: 6px 4px;           /* Spacing: top/bottom and left/right */
+}
+

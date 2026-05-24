@@ -1,0 +1,47 @@
+/* -- Main config file for the wallpaper menu */
+
+/* Imports the colors */
+@import "colors.rasi"
+@import "layout.rasi"
+@import "font.rasi"
+
+/** ==== Configuration ==== **/
+configuration {
+    modi:           "wallpaper:~/.config/rofi/modes/wallpaper-menu.sh";
+    markup-rows:    true;
+}
+
+/** ===== Main Window ===== **/
+window {
+    height: 600px;
+    width: 800px;
+}
+
+/** ==== Main Box ==== **/
+mainbox {
+    children:                    [ "listview" ];
+}
+
+/** ===== Listview ===== **/
+listview {
+    //layout: horizontal;
+    columns: 4;
+    lines: 3;
+}
+
+/** ===== Elements ===== **/
+element {
+    orientation: vertical;
+   
+}
+element-icon {
+    size: calc (200px -30px);
+    margin:0px;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    border-radius: inherit;
+}
+element-text {
+    enabled:false;
+}
+

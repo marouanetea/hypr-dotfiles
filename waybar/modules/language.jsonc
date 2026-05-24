@@ -1,0 +1,10 @@
+{
+    "hyprland/language": {
+        "format": "{}",
+        "format-fr": "FR",
+        "format-ar": "ع",
+        "on-click": "hyprctl switchxkblayout all next",
+        "tooltip": "true",
+        "tooltip-format": "Active Layout: {long}"
+    }
+}

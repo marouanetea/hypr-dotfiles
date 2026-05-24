@@ -1,0 +1,15 @@
+{
+//display configuration
+	"layer": "top",      // Display the bar on top of your windows
+	"position": "top",   // Position: top, bottom, left, or right
+	"height": 32,        // Height in pixels
+//Includes
+	"include": [
+		"~/.config/waybar/modules/*.jsonc",
+    	],
+
+	// Choose modules for each section
+	"modules-left": ["battery", "cpu", "temperature", "memory", "network"],
+	"modules-center": ["hyprland/workspaces", "wlr/taskbar"],
+	"modules-right": ["backlight", "pulseaudio", "hyprland/language", "custom/power-profiles","tray","clock", "custom/power"],
+}

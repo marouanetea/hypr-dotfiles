@@ -1,0 +1,11 @@
+{
+"wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 16,
+        "icon-theme": "Papirus-Dark", // Optional: Specify your preferred system icon theme
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "all-outputs": false // 'false' only shows windows open on the current monitor
+    }
+}

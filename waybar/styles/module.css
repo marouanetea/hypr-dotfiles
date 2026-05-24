@@ -1,0 +1,86 @@
+#cpu,
+#temperature,
+#memory,
+#network,
+#pulseaudio,
+#backlight,
+#battery,
+#tray,
+#clock,
+#language,
+#custom-power-profiles
+{
+    padding: 5px 5px;
+    margin:  2px 2px;
+    background-color: transparent; 
+    color: @on_surface;
+    border: 0px;
+    border-radius: 100px;
+
+}
+
+#pulseaudio:hover,
+#language:hover,
+#custom-power-profiles:hover
+{
+    background-color : @primary_container;
+}
+
+#cpu,
+#temperature,
+#memory,
+#battery{
+    min-width: 40px;
+}
+
+#custom-power-profiles{
+    min-width: 20px;
+}
+
+#pulseaudio,
+#backlight{
+    min-width: 60px;
+}
+
+#network{
+    min-width: 220px;
+}
+
+#clock{
+    min-width: 55px;
+}
+#language{
+    min-width: 20px;
+}
+
+#tray > * {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+#custom-power-profiles.performance { color: @blue; }
+#custom-power-profiles.balanced { color: @green; }
+#custom-power-profiles.power-saver { color: @orange; }
+
+#cpu,
+#temperature,
+#memory
+{
+    color: @blue;
+}
+
+#cpu.warning,
+#temperature.warning,
+#memory.warning,
+#battery.warning
+{
+    color: @yellow; /* Warning Yellow */
+}
+
+#cpu.critical,
+#temperature.critical,
+#memory.critical,
+#battery.critical
+{
+    color: @red; /* Panic Red */
+}

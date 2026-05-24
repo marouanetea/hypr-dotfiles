@@ -1,0 +1,7 @@
+{
+    "custom/power": {
+        "format": "⏁", // You can use an icon like  or ⏁
+        "on-click": "rofi -show power -config power-alt.rasi",
+        "tooltip": "power menu"
+    },
+}

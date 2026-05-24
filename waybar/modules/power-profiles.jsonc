@@ -1,0 +1,18 @@
+{    
+    "custom/power-profiles": {
+        "format": "{icon}",
+        "format-icons": ["⚡", "⚖️", "", "⚠️"],
+        "return-type": "json",
+        "exec": "$HOME/.config/waybar/scripts/power-profiles.sh",
+        "interval": "once",
+        "signal": 10,
+        "tooltip": false,
+        "menu": "on-click", 
+        "menu-file": "$HOME/.config/waybar/menus/power-profiles-menu.xml",
+        "menu-actions": {
+            "perf": "powerprofilesctl set performance  && pkill -RTMIN+10 waybar",
+            "bal": "powerprofilesctl set balanced  && pkill -RTMIN+10 waybar",
+            "save": "powerprofilesctl set power-saver  && pkill -RTMIN+10 waybar"
+        }
+    }
+}

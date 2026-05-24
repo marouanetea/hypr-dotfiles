@@ -1,0 +1,48 @@
+/* -- Main config file for the power menu */
+
+/* Imports the colors */
+@import "colors.rasi"
+@import "layout.rasi"
+
+* {
+    font:   "Noto Sans Arabic 14";
+}
+
+/** ==== Configuration ==== **/
+configuration {
+    modi:           "power:~/.config/rofi/modes/power-menu.sh";
+    markup-rows:    true;
+}
+
+/** ===== Main Window ===== **/
+window {
+    height: 348px;
+    width: 100px;
+	location : north east;
+}
+
+/** ==== Main Box ==== **/
+mainbox {
+    children:                    [ "listview" ];
+}
+
+/** ===== Listview ===== **/
+listview {
+    layout: vertical;
+}
+
+/** ===== Elements ===== **/
+element {
+    orientation: vertical;
+   
+}
+element-icon {
+    size: 50px;
+    margin:5px;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+}
+element-text {
+    enabled:false;
+}
+
