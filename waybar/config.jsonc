@@ -11,5 +11,5 @@
 	// Choose modules for each section
 	"modules-left": ["battery", "cpu", "temperature", "memory", "network"],
 	"modules-center": ["hyprland/workspaces", "wlr/taskbar"],
-	"modules-right": ["backlight", "pulseaudio", "hyprland/language", "custom/power-profiles","tray","clock", "custom/power"],
+	"modules-right": ["backlight", "pulseaudio", "hyprland/language", "custom/power-profiles","tray","custom/swaync","clock", "custom/power"],
 }

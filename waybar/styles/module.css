@@ -8,7 +8,8 @@
 #tray,
 #clock,
 #language,
-#custom-power-profiles
+#custom-power-profiles,
+#custom-swaync
 {
     padding: 5px 5px;
     margin:  2px 2px;
@@ -21,7 +22,8 @@
 
 #pulseaudio:hover,
 #language:hover,
-#custom-power-profiles:hover
+#custom-power-profiles:hover,
+#custom-swaync:hover
 {
     background-color : @primary_container;
 }
@@ -33,7 +35,8 @@
     min-width: 40px;
 }
 
-#custom-power-profiles{
+#custom-power-profiles,
+#custom-swaync{
     min-width: 20px;
 }
 

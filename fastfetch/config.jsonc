@@ -1,0 +1,124 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "source": "~/.config/fastfetch/logos/*.png",
+        "type": "kitty", 
+        "width": 40,
+        "padding": {
+            "left": 1
+        }
+    },
+    "modules": [
+        "break",
+        {
+            "type": "custom",
+            "format": "\u001B[31m┌──────────────────────Hardware──────────────────────┐"
+        },
+        {
+            "type": "host",
+            "key": "PC",
+            "keyColor": "red",
+        },
+        {
+            "type": "cpu",
+            "key": "│├ CPU",
+            "showPeCoreCount": true,
+            "keyColor": "red"
+        },
+        {
+            "type": "gpu",
+            "key": "│├ GPU",
+            "keyColor": "red"
+        },
+        {
+            "type": "memory",
+            "key": "│├ RAM",
+            "keyColor": "red"
+        },
+        {
+            "type": "disk",
+            "key": "│├ DSK",
+            "keyColor": "red",
+	    	"format": "{1} / {2} ({3}) - {9}"
+		},
+		{
+            "type": "display",
+            "key": "│└ DSP",
+            "keyColor": "red"
+		},
+        {
+            "type": "custom",
+            "format": "\u001B[31m└────────────────────────────────────────────────────┘"
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "\u001b[33m┌──────────────────────Software──────────────────────┐"
+        },
+        {
+            "type": "os",
+            "key": "OS",
+            "keyColor": "green"
+        },
+        {
+            "type": "kernel",
+            "key": "│├ KER",
+            "keyColor": "green"
+        },
+        {
+            "type": "packages",
+            "key": "│├ PAC",
+            "keyColor": "green"
+        },
+	{
+	    "type": "terminal",
+            "key": "│├ TER",
+            "keyColor": "green"
+        },
+	{
+            "type": "shell",
+            "key": "│├ SHL",
+            "keyColor": "green"
+        },
+        {
+            "type": "lm",
+            "key": "│├ LM ",
+            "keyColor": "green"
+        },
+        {
+            "type": "wm",
+            "key": "│└ WM ",
+            "keyColor": "green"
+        },
+        {
+            "type": "custom",
+            "format": "\u001b[33m└────────────────────────────────────────────────────┘"
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "\u001B[34m┌───────────────────Miscellaneous────────────────────┐"
+        },
+        {
+            "type": "uptime",
+            "key": "│ UP ",
+            "keyColor": "blue"
+        },
+	
+		{
+		    "type": "datetime",
+		    "key": "│ DT ",
+		    "keyColor": "blue",
+		    "format": "{3}/{11}/{1} - {14}:{18} {22}"
+		},
+        {
+            "type": "custom",
+            "format": "\u001B[34m└────────────────────────────────────────────────────┘"
+        },
+        {"type": "colors",
+        "paddingLeft": 20,
+        "symbol": "circle"
+        },
+        "break"
+    ]
+}

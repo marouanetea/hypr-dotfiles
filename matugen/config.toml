@@ -24,18 +24,22 @@ gray    = { color = "#808080", blend = false }
 [templates.hyprland]
 input_path = '~/.config/matugen/templates/hypr.lua'
 output_path = '~/.config/hypr/colors.lua'
+post_hook="hyprctl reload > /dev/null"
 
 [templates.kitty]
 input_path = '~/.config/matugen/templates/kitty.conf'
 output_path = '~/.config/kitty/colors.conf'
+post_hook = "pkill -SIGUSR1 kitty"
 
 [templates.rofi]
 input_path = '~/.config/matugen/templates/rofi.rasi'
 output_path = '~/.config/rofi/colors.rasi'
+post_hook="pkill -x rofi"
 
 [templates.waybar]
 input_path = '~/.config/matugen/templates/colors.css'
 output_path = '~/.config/waybar/colors.css'
+post_hook="pkill -SIGUSR2 waybar"
 
 [templates.gtk3]
 input_path = '~/.config/matugen/templates/gtk-colors.css'
@@ -48,11 +52,17 @@ output_path = '~/.config/gtk-4.0/gtk.css'
 [templates.papirus_folders]
 input_path = '~/.config/matugen/templates/main_color'
 output_path = '~/.config/scripts/color'
+post_hook="$HOME/.config/scripts/foldier_color.sh"
+
+[templates.swaync]
+input_path = '~/.config/matugen/templates/colors.css'
+output_path = '~/.config/swaync/colors.css'
+post_hook="swaync-client -rs"
 
 [config.wallpaper]
 # Whether to set the wallpaper or not
 set = true
 command = "awww img --transition-type center {{ image }}"
-pre_hook = "$HOME/.config/scripts/foldier_color.sh ; $HOME/.config/scripts/reload_theme.sh"
+pre_hook = "$HOME/.config/scripts/reload_theme.sh"
 
 

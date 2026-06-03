@@ -1,5 +1,5 @@
-# Match everything inside the wallpapers directory relative to this folder
 wallpapers/*
-
-# Un-ignore your default wallpaper
 !wallpapers/readme.md
+
+fastfetch/logos/*
+!fastfetch/logos/readme.md

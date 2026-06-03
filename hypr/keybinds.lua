@@ -61,25 +61,25 @@ hl.bind(_G.mainMod .. " + ALT + left",  hl.dsp.window.move ({ workspace = tostri
 -- =========================================================================
 
 -- Laptop
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd( "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+"))
-hl.bind("XF86AudioLowerVolume",	hl.dsp.exec_cmd( "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"))
-hl.bind("XF86AudioMute",       	hl.dsp.exec_cmd( "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"))
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd( "swayosd-client --output-volume raise"))
+hl.bind("XF86AudioLowerVolume",	hl.dsp.exec_cmd( "swayosd-client --output-volume lower"))
+hl.bind("XF86AudioMute",       	hl.dsp.exec_cmd( "swayosd-client --output-volume mute-toggle"))
 -- Keyboard
-hl.bind("F10", hl.dsp.exec_cmd( "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+"), {repeating = true})
-hl.bind("F9",	hl.dsp.exec_cmd( "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), {repeating = true})
-hl.bind(_G.mainMod .. " + F9",       	hl.dsp.exec_cmd( "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"))
-hl.bind(_G.mainMod .. " + F10",       	hl.dsp.exec_cmd( "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"))
+hl.bind("F10", hl.dsp.exec_cmd( "swayosd-client --output-volume raise"), {repeating = true})
+hl.bind("F9",  hl.dsp.exec_cmd( "swayosd-client --output-volume lower"), {repeating = true})
+hl.bind(_G.mainMod .. " + F9", hl.dsp.exec_cmd( "swayosd-client --output-volume mute-toggle"))
+hl.bind(_G.mainMod .. " + F10",hl.dsp.exec_cmd( "swayosd-client --output-volume mute-toggle"))
 
 -- =========================================================================
 -- Screen brightness controls
 -- =========================================================================
 
 -- Laptop
-hl.bind("XF86MonBrightnessUp",   hl.dsp.exec_cmd( "brightnessctl set 5%+"))
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd( "brightnessctl set 5%-"))
+hl.bind("XF86MonBrightnessUp",   hl.dsp.exec_cmd( "swayosd-client --brightness raise"))
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd( "wayosd-client --brightness lower"))
 -- Keyboar
-hl.bind("F12",   hl.dsp.exec_cmd( "brightnessctl set 5%+"), {repeating = true})
-hl.bind("F11", hl.dsp.exec_cmd( "brightnessctl set 5%-"), {repeating = true})
+hl.bind("F12", hl.dsp.exec_cmd( "swayosd-client --brightness raise"), {repeating = true})
+hl.bind("F11", hl.dsp.exec_cmd( "swayosd-client --brightness lower"), {repeating = true})
 
 -- =========================================================================
 -- Media playback

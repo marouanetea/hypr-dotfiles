@@ -78,5 +78,5 @@ else
 fi
 
 # Apply the theme dynamically
-(papirus-folders -C "$BEST_MATCH" -t Papirus-Dark)&
+~/.local/bin/papirus-folders -C "$BEST_MATCH"
 

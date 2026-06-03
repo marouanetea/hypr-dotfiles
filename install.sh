@@ -60,6 +60,8 @@ link_config "rofi"
 link_config "matugen"
 link_config "wallpapers"
 link_config "scripts"
+link_config "swaync"
+link_config "fastfetch"
 
 echo ""
 echo "Done! Your Hyprland environment is now linked."

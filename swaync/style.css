@@ -1,0 +1,181 @@
+@import url("./colors.css");
+
+/* Fix all he inner elements background being inhereted from GTK*/
+*{
+	background-color:			transparent;
+}
+
+
+/* ==========================================================================
+   Notification Row
+   ========================================================================== */
+.notification-row {
+  	transition: 							all 100ms ease;
+  	outline: 								none;              
+  	margin: 								10px;
+}
+.notification-row,
+.notification-background {
+	background-color : 			transparent;
+	padding:								0;
+}
+/* ==========================================================================
+   The Notification Card : normal
+   ========================================================================== */
+.notification {
+	transition: 							all 100ms ease;
+	border-radius: 					8px;
+	margin: 								0;
+	padding: 							0;
+	box-shadow: 					none;
+	border : 								2px solid @secondary;
+	background-color:			@surface;
+}
+
+.notification-content {
+  	padding: 							6px;
+}
+
+.notification-content .summary,
+.notification-content .body,
+.notification-content .time,
+.notification-action {
+    color: 									@on_surface;
+}
+
+/* ==========================================================================
+   The Notification Card : hover
+   ========================================================================== */
+
+.notification-row:focus .notification,
+.notification-row:hover .notification {
+	border : 								2px solid @primary;
+	background-color:			@surface_container_low;
+}
+
+.notification-row:focus .notification-content .summary,
+.notification-row:focus .notification-content .body,
+.notification-row:focus .notification-content .time,
+.notification-row:focus .notification-action,
+.notification-row:hover .notification-content .summary,
+.notification-row:hover .notification-content .body,
+.notification-row:hover .notification-content .time,
+.notification-row:hover .notification-action {
+    color: 									@primary;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+/* All butons are alike*/
+.control-center-clear-all,
+.close-button,
+button  {
+	transition: 							all 100ms ease;
+	color: 									@on_secondary;
+	text-shadow: 					none;
+	background-color: 			@secondary;
+	border: 								none;
+	box-shadow: 					none;
+	border-radius: 					8px;
+}
+.control-center-clear-all:hover,
+.close-button:hover,
+button:hover {
+	background-color: 			@primary;
+	color: 									@on_primary;
+}
+.control-center-clear-all:disabled,
+.close-button:disabled,
+button:disabled {
+	background-color: 		@surface_container_high;
+	color: 								@on_surface;
+}
+
+/* The 'X' close button inside the pop-up card */
+.close-button {
+	padding: 							0;
+	border-radius: 					100%; 
+	margin-top: 						5px; 
+	margin-right: 					5px;
+	min-width: 						24px;            /* Clickable hit-box size definition */
+	min-height: 						24px;
+}
+
+/* ==========================================================================
+   Switch
+   ========================================================================== */
+
+.control-center-dnd {
+  border-radius: 					8px;
+  background-color: 			@surface_container_high;
+  border: 								none;
+  box-shadow: 						none;
+}
+
+.control-center-dnd:checked {
+  background-color: 			@primary;
+}
+
+.control-center-dnd slider {
+  background-color: 			@on_surface;
+  border-radius: 					100%;
+}
+/* ==========================================================================
+   Control Center Main Shell Layout
+   ========================================================================== */
+
+.control-center {
+	transition: 							all 100ms ease;
+	background-color: 			@surface;
+	border-radius: 					8px;
+	padding: 							4px;
+	box-shadow: 					none;
+	color: 									@on_surface;
+	border: 								1px solid @primary;     
+}		
+
+.top-action-title {
+	color:									 @primary;
+	text-shadow: 					none;
+}
+
+/* ==========================================================================
+   MPRIS media controls
+   ========================================================================== */
+
+.widget-mpris .widget-mpris-player{
+    background-color: 			transparent;
+	padding:								0; /*very important to correctly mask the background image*/
+	background-color: 			@surface;
+	border-radius: 					8px;
+	border : 								2px solid @secondary;
+	color: 									@on_surface;
+	box-shadow : 					none;
+}
+
+.widget-mpris .widget-mpris-player:hover{
+	border : 								2px solid @primary;
+}
+
+.widget-mpris  .widget-mpris-player .mpris-overlay {
+    	background-color: 		alpha(@black_source, 0.7); 
+		margin:							0; /*very important to correctly mask the background image*/
+}
+
+.widget-mpris .widget-mpris-player:hover .widget-mpris-title,
+.widget-mpris .widget-mpris-player:hover .widget-mpris-subtitle{
+	color: 									@primary;
+}
+
+.widget-mpris button{
+    background-color:			transparent;
+	color:									@on_surface;
+}
+.widget-mpris button:hover{
+    color:									@primary;
+}
+
+
+
