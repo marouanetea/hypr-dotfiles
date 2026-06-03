@@ -52,7 +52,7 @@ output_path = '~/.config/gtk-4.0/gtk.css'
 [templates.papirus_folders]
 input_path = '~/.config/matugen/templates/main_color'
 output_path = '~/.config/scripts/color'
-post_hook="$HOME/.config/scripts/foldier_color.sh"
+post_hook="$HOME/.config/scripts/foldier_color.sh > /dev/null"
 
 [templates.swaync]
 input_path = '~/.config/matugen/templates/colors.css'
@@ -63,6 +63,5 @@ post_hook="swaync-client -rs"
 # Whether to set the wallpaper or not
 set = true
 command = "awww img --transition-type center {{ image }}"
-pre_hook = "$HOME/.config/scripts/reload_theme.sh"
 
 

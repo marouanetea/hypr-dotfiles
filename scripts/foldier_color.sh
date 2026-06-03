@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # File where your color data is stored (Format: hue,saturation,mode)
+echo "called"
 
 COLOR_FILE="$HOME/.config/scripts/color"
 
@@ -78,5 +79,6 @@ else
 fi
 
 # Apply the theme dynamically
-~/.local/bin/papirus-folders -C "$BEST_MATCH"
+(~/.local/bin/papirus-folders -C "$BEST_MATCH")
+echo "done !"
 

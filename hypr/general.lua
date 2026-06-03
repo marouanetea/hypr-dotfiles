@@ -18,6 +18,7 @@ _G.musicPlayer = "g4music"
 _G.menu           = "rofi -show drun -config main.rasi"
 _G.wallpaperMenu  = "rofi -show wallpaper -config wallpaper.rasi"
 _G.powerMenu      = "rofi -show power -config power.rasi"
+_G.socialMenu     = "rofi -show social -config social.rasi"
 
 -- X wayland compatibility
 hl.config({

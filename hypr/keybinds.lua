@@ -20,6 +20,7 @@ hl.bind(_G.mainMod  .. " + M", hl.dsp.exec_cmd(_G.musicPlayer))
 hl.bind(_G.mainMod  .. " + SPACE", hl.dsp.exec_cmd(_G.menu))
 hl.bind(_G.mainMod  .. " + W", hl.dsp.exec_cmd(_G.wallpaperMenu))
 hl.bind(_G.mainMod  .. " + DELETE", hl.dsp.exec_cmd(_G.powerMenu))
+hl.bind(_G.mainMod  .. " + S", hl.dsp.exec_cmd(_G.socialMenu))
 
 -- Mouse 
 hl.bind(_G.mainMod  .. " + mouse:272", hl.dsp.window.drag())
@@ -87,3 +88,16 @@ hl.bind("F11", hl.dsp.exec_cmd( "swayosd-client --brightness lower"), {repeating
 hl.bind(_G.mainMod .. " + KP_Begin",       	hl.dsp.exec_cmd( "playerctl play-pause"))
 hl.bind(_G.mainMod .. " + KP_Right",       	hl.dsp.exec_cmd( "playerctl next"))
 hl.bind(_G.mainMod .. " + KP_Left",       	hl.dsp.exec_cmd( "playerctl previous"))
+
+-- =========================================================================
+-- hyprshot
+-- =========================================================================
+hl.bind("Print",       	hl.dsp.exec_cmd( "hyprshot -m output -m eDP-1 -o ~/Pictures/screenshots"))
+hl.bind("ALT + Print",       	hl.dsp.exec_cmd( "hyprshot -m window -m active -o ~/Pictures/screenshots"))
+hl.bind(_G.mainMod .. " + Print",       	hl.dsp.exec_cmd( "hyprshot -m region -m eDP-1 -o ~/Pictures/screenshots"))
+
+
+
+
+
+

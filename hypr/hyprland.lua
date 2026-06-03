@@ -22,3 +22,6 @@ require("keybinds")
 
 -- 6. Autostart Applications
 require("exec")
+
+-- 7. Animations
+require("animations")

@@ -47,16 +47,11 @@
    The Notification Card : hover
    ========================================================================== */
 
-.notification-row:focus .notification,
 .notification-row:hover .notification {
 	border : 								2px solid @primary;
 	background-color:			@surface_container_low;
 }
 
-.notification-row:focus .notification-content .summary,
-.notification-row:focus .notification-content .body,
-.notification-row:focus .notification-content .time,
-.notification-row:focus .notification-action,
 .notification-row:hover .notification-content .summary,
 .notification-row:hover .notification-content .body,
 .notification-row:hover .notification-content .time,
@@ -64,13 +59,16 @@
     color: 									@primary;
 }
 
+.collapsed.notification-group:hover .notification{
+	border : 								2px solid @primary;
+	background-color:			@surface_container_low;
+}
+
 /* ==========================================================================
    Buttons
    ========================================================================== */
 
 /* All butons are alike*/
-.control-center-clear-all,
-.close-button,
 button  {
 	transition: 							all 100ms ease;
 	color: 									@on_secondary;
@@ -80,14 +78,10 @@ button  {
 	box-shadow: 					none;
 	border-radius: 					8px;
 }
-.control-center-clear-all:hover,
-.close-button:hover,
 button:hover {
 	background-color: 			@primary;
 	color: 									@on_primary;
 }
-.control-center-clear-all:disabled,
-.close-button:disabled,
 button:disabled {
 	background-color: 		@surface_container_high;
 	color: 								@on_surface;
@@ -169,12 +163,15 @@ button:disabled {
 	color: 									@primary;
 }
 
-.widget-mpris button{
+.widget-mpris  button{
     background-color:			transparent;
 	color:									@on_surface;
 }
-.widget-mpris button:hover{
+.widget-mpris  button:hover{
     color:									@primary;
+}
+.widget-mpris  button:disabled{
+	filter:									opacity(40%);
 }
 
 

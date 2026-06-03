@@ -2,7 +2,7 @@
 -- Color Definitions (ARGB Format)
 -- =========================================================================
 
-_G.primary_col = "0xff83d2e4"
-_G.secondary_col = "0xffb2cbd1"
-_G.background_col  = "0.xff0e1416"
+_G.primary_col = "0xffc0c1ff"
+_G.secondary_col = "0xffc5c4dd"
+_G.background_col  = "0.xff131318"
 
