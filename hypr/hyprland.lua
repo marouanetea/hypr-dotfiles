@@ -9,6 +9,7 @@ require("colors")
 require("monitors")
 require("input")
 require("general")
+require("custom_functions")
 
 -- 3. Themes & Looks
 require("decorations")

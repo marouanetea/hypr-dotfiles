@@ -1,67 +1,67 @@
 [config]
-#config settings
-prefer = "lightness"
-mode = "dark"
-type = "expressive"
-contrast = 0.0
+	#config settings
+	contrast = 0.1
+	source_color_index = 0
+	prefer = "saturation"
+	mode = "dark"
 
 [config.custom_colors]
-# --- Rainbow Spectrum ---
-red     = { color = "#ff0000", blend = true }
-orange  = { color = "#ff7f00", blend = true }
-yellow  = { color = "#ffff00", blend = true }
-green   = { color = "#00ff00", blend = true }
-cyan    = { color = "#00ffff", blend = true }
-blue    = { color = "#0000ff", blend = true }
-magenta = { color = "#ff00ff", blend = true }
-purple  = { color = "#800080", blend = true }
+	# --- Rainbow Spectrum ---
+	red     = { color = "#ff0000", blend = true }
+	orange  = { color = "#ff7f00", blend = true }
+	yellow  = { color = "#ffff00", blend = true }
+	green   = { color = "#00ff00", blend = true }
+	cyan    = { color = "#00ffff", blend = true }
+	blue    = { color = "#0000ff", blend = true }
+	magenta = { color = "#ff00ff", blend = true }
+	purple  = { color = "#800080", blend = true }
 
-# --- Monochrome / Neutrals ---
-black   = { color = "#000000", blend = false }
-white   = { color = "#ffffff", blend = false }
-gray    = { color = "#808080", blend = false }
+	# --- Monochrome / Neutrals ---
+	black   = { color = "#000000", blend = true }
+	white   = { color = "#ffffff", blend = true }
+	gray    = { color = "#808080", blend = true }
 
 [templates.hyprland]
-input_path = '~/.config/matugen/templates/hypr.lua'
-output_path = '~/.config/hypr/colors.lua'
-post_hook="hyprctl reload > /dev/null"
+	input_path = '~/.config/matugen/templates/hypr.lua'
+	output_path = '~/.config/hypr/colors.lua'
+	post_hook="hyprctl reload > /dev/null"
 
 [templates.kitty]
-input_path = '~/.config/matugen/templates/kitty.conf'
-output_path = '~/.config/kitty/colors.conf'
-post_hook = "pkill -SIGUSR1 kitty"
+	input_path = '~/.config/matugen/templates/kitty.conf'
+	output_path = '~/.config/kitty/colors.conf'
+	post_hook = "pkill -SIGUSR1 kitty"
 
 [templates.rofi]
-input_path = '~/.config/matugen/templates/rofi.rasi'
-output_path = '~/.config/rofi/colors.rasi'
-post_hook="pkill -x rofi"
+	input_path = '~/.config/matugen/templates/rofi.rasi'
+	output_path = '~/.config/rofi/colors.rasi'
+	post_hook="pkill -x rofi"
 
 [templates.waybar]
-input_path = '~/.config/matugen/templates/colors.css'
-output_path = '~/.config/waybar/colors.css'
-post_hook="pkill -SIGUSR2 waybar"
+	input_path = '~/.config/matugen/templates/colors.css'
+	output_path = '~/.config/waybar/colors.css'
+	post_hook="pkill -SIGUSR2 waybar"
 
 [templates.gtk3]
-input_path = '~/.config/matugen/templates/gtk-colors.css'
-output_path = '~/.config/gtk-3.0/gtk.css'
+	input_path = '~/.config/matugen/templates/gtk-colors.css'
+	output_path = '~/.config/gtk-3.0/gtk.css'
 
 [templates.gtk4]
-input_path = '~/.config/matugen/templates/gtk-colors.css'
-output_path = '~/.config/gtk-4.0/gtk.css'
+	input_path = '~/.config/matugen/templates/gtk-colors.css'
+	output_path = '~/.config/gtk-4.0/gtk.css'
 
 [templates.papirus_folders]
-input_path = '~/.config/matugen/templates/main_color'
-output_path = '~/.config/scripts/color'
-post_hook="$HOME/.config/scripts/foldier_color.sh > /dev/null"
+	input_path = '~/.config/matugen/templates/main_color'
+	output_path = '~/.config/scripts/color'
+	post_hook="$HOME/.config/scripts/foldier_color.sh > /dev/null"
 
 [templates.swaync]
-input_path = '~/.config/matugen/templates/colors.css'
-output_path = '~/.config/swaync/colors.css'
-post_hook="swaync-client -rs"
+	input_path = '~/.config/matugen/templates/colors.css'
+	output_path = '~/.config/swaync/colors.css'
+	post_hook="swaync-client -rs"
 
 [config.wallpaper]
-# Whether to set the wallpaper or not
-set = true
-command = "awww img --transition-type center {{ image }}"
+	# Whether to set the wallpaper or not
+	set = true
+	command = "awww img --transition-type center {{ image }}"
 
 

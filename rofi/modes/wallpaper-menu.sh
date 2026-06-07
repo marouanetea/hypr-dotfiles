@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+MATUGEN_TYPE="scheme-vibrant"
 WALL_DIR="$HOME/.config/wallpapers"
 CACHE_DIR="$HOME/.config/cache"
 THUMB_DIR="$CACHE_DIR/thumbnails"
@@ -44,7 +45,7 @@ else #--------- Second call -------------
     # Make sure the file actually exists before running operations
     if [[ -f "$FULL_PATH" ]]; then
         # 1. Call matugen to generate color scheme
-        (matugen image "$FULL_PATH")&
+        (matugen image "$FULL_PATH" -t "$MATUGEN_TYPE")&
 
         # 2. Create a miniature background for the NEXT time Rofi opens
         (magick "$FULL_PATH" \

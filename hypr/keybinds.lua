@@ -8,7 +8,7 @@
 
 -- Window commands
 hl.bind(_G.mainMod  .. " + Q", hl.dsp.window.close())
-hl.bind(_G.mainMod  .. " + V", hl.dsp.window.float({action = "toggle"}))
+hl.bind(_G.mainMod .. " + RETURN", _G.cycle_float_center)
 
 -- Program shortcuts
 hl.bind(_G.mainMod  .. " + T", hl.dsp.exec_cmd(_G.terminal))
@@ -28,6 +28,7 @@ hl.bind(_G.mainMod  .. " + mouse:273", hl.dsp.window.resize())
 
 -- Emergency
 hl.bind("SUPER + ALT + CTRL + ESCAPE", hl.dsp.exec_cmd(_G.shutDown))
+hl.bind("ALT + CTRL + DELETE", hl.dsp.exec_cmd("hyprctl kill"))
 
 -- =========================================================================
 -- Workspaces (Generated via Loop)
@@ -49,8 +50,8 @@ end
 -- =========================================================================
 
 -- Switch workspace +-1
-hl.bind(_G.mainMod .. " + CTRL + right", hl.dsp.focus({ workspace = tostring("r+1") }))
-hl.bind(_G.mainMod .. " + CTRL + left",  hl.dsp.focus({ workspace = tostring("r-1") }))
+hl.bind(_G.mainMod .. " + right", hl.dsp.focus({ workspace = tostring("r+1") }))
+hl.bind(_G.mainMod .. " + left",  hl.dsp.focus({ workspace = tostring("r-1") }))
 
 -- Move active window to workspace +-1
 hl.bind(_G.mainMod .. " + ALT + right",  hl.dsp.window.move ({ workspace = tostring("r+1") }))
@@ -65,6 +66,7 @@ hl.bind(_G.mainMod .. " + ALT + left",  hl.dsp.window.move ({ workspace = tostri
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd( "swayosd-client --output-volume raise"))
 hl.bind("XF86AudioLowerVolume",	hl.dsp.exec_cmd( "swayosd-client --output-volume lower"))
 hl.bind("XF86AudioMute",       	hl.dsp.exec_cmd( "swayosd-client --output-volume mute-toggle"))
+
 -- Keyboard
 hl.bind("F10", hl.dsp.exec_cmd( "swayosd-client --output-volume raise"), {repeating = true})
 hl.bind("F9",  hl.dsp.exec_cmd( "swayosd-client --output-volume lower"), {repeating = true})

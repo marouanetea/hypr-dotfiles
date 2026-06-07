@@ -12,8 +12,8 @@ button.active {
     color: @primary;
 }
 
-button:hover,
-button.active:hover{
+#taskbar button:hover,
+#taskbar button.active:hover{
     background-color: @primary_container;
     color: @primary;
 }

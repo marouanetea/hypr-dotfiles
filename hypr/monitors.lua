@@ -26,3 +26,12 @@ hl.env("MOZ_ENABLE_WAYLAND", "1") -- For Firefox/Thunderbird
 -- Cursor scaling
 hl.env("XCURSOR_SIZE","24")
 hl.env("HYPRCURSOR_SIZE","24")
+
+-- Force Mesa (Intel) as the default GLX provider
+hl.env("__GLX_VENDOR_LIBRARY_NAME", "mesa")
+
+-- Explicitly disable Nvidia offloading by default
+hl.env("__NV_PRIME_RENDER_OFFLOAD", "0")
+
+-- Tell vulkan to sort the intel ship first, for GTK to use intel 
+hl.env("VK_LOADER_DEVICE_SELECT", "8086")

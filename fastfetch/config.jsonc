@@ -1,120 +1,99 @@
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
     "logo": {
-        "source": "~/.config/fastfetch/logos/*.png",
+        "source": "~/.config/fastfetch/logos/WANTED_Straw_Hats/*.jpg",
         "type": "kitty", 
-        "width": 40,
+        "width": 28,
         "padding": {
-            "left": 1
+            "left": 0,
+			"right":1
         }
     },
+	"display": {
+		"separator": " "
+	},
     "modules": [
-        "break",
-        {
-            "type": "custom",
-            "format": "\u001B[31m┌──────────────────────Hardware──────────────────────┐"
-        },
         {
             "type": "host",
-            "key": "PC",
+            "key": "╭ PC ",
             "keyColor": "red",
         },
         {
             "type": "cpu",
-            "key": "│├ CPU",
+            "key": "├ CPU",
             "showPeCoreCount": true,
             "keyColor": "red"
         },
         {
             "type": "gpu",
-            "key": "│├ GPU",
+            "key": "├ GPU",
             "keyColor": "red"
         },
         {
             "type": "memory",
-            "key": "│├ RAM",
+            "key": "├ RAM",
             "keyColor": "red"
         },
         {
             "type": "disk",
-            "key": "│├ DSK",
+            "key": "├ DSK",
             "keyColor": "red",
 	    	"format": "{1} / {2} ({3}) - {9}"
 		},
 		{
             "type": "display",
-            "key": "│└ DSP",
+            "key": "╰ DSP",
             "keyColor": "red"
 		},
-        {
-            "type": "custom",
-            "format": "\u001B[31m└────────────────────────────────────────────────────┘"
-        },
         "break",
         {
-            "type": "custom",
-            "format": "\u001b[33m┌──────────────────────Software──────────────────────┐"
-        },
-        {
             "type": "os",
-            "key": "OS",
+            "key": "╭ OS ",
             "keyColor": "green"
         },
         {
             "type": "kernel",
-            "key": "│├ KER",
+            "key": "├ KER",
             "keyColor": "green"
         },
         {
             "type": "packages",
-            "key": "│├ PAC",
+            "key": "├ PAC",
             "keyColor": "green"
         },
 	{
 	    "type": "terminal",
-            "key": "│├ TER",
+            "key": "├ TER",
             "keyColor": "green"
         },
 	{
             "type": "shell",
-            "key": "│├ SHL",
+            "key": "├ SHL",
             "keyColor": "green"
         },
         {
             "type": "lm",
-            "key": "│├ LM ",
+            "key": "├ LM ",
             "keyColor": "green"
         },
         {
             "type": "wm",
-            "key": "│└ WM ",
+            "key": "╰ WM ",
             "keyColor": "green"
-        },
-        {
-            "type": "custom",
-            "format": "\u001b[33m└────────────────────────────────────────────────────┘"
         },
         "break",
         {
-            "type": "custom",
-            "format": "\u001B[34m┌───────────────────Miscellaneous────────────────────┐"
-        },
-        {
             "type": "uptime",
-            "key": "│ UP ",
+            "key": "╭ UP ",
             "keyColor": "blue"
         },
-	
 		{
 		    "type": "datetime",
-		    "key": "│ DT ",
+		    "key": "╰ DT ",
 		    "keyColor": "blue",
 		    "format": "{3}/{11}/{1} - {14}:{18} {22}"
 		},
-        {
-            "type": "custom",
-            "format": "\u001B[34m└────────────────────────────────────────────────────┘"
-        },
+        "break",
         {"type": "colors",
         "paddingLeft": 20,
         "symbol": "circle"
