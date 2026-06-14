@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-MATUGEN_TYPE="scheme-vibrant"
+MATUGEN_TYPE="scheme-rainbow"
+RESIZE_FILTER="catmull-rom"
+
 WALL_DIR="$HOME/.config/wallpapers"
 CACHE_DIR="$HOME/.config/cache"
 THUMB_DIR="$CACHE_DIR/thumbnails"
@@ -16,7 +18,29 @@ then
     # 1. Gather all files into an array safely to avoid subshell loop bugs
     mapfile -t IM_LIST < <(find -L "$WALL_DIR" -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \))
     
-    # 1. Generate the thumbs in a separate "thread"
+    # --- CLEANUP ORPHANED THUMBNAILS ---
+    # Create an associative array of valid thumbnail filenames for O(1) lookups
+    declare -A VALID_THUMBS
+    for image_path in "${IM_LIST[@]}"; do
+        filename=$(basename "$image_path")
+        VALID_THUMBS["${filename%.*}.png"]=1
+    done
+
+    # Loop through existing thumbnails and remove the ones that aren't valid anymore
+    if [ -d "$THUMB_DIR" ]; then
+        for thumb_path in "$THUMB_DIR"/*.png; do
+            # Check if the glob actually found files
+            [[ -e "$thumb_path" ]] || break
+            
+            thumb_name=$(basename "$thumb_path")
+            if [[ -z "${VALID_THUMBS[$thumb_name]}" ]]; then
+                rm "$thumb_path"
+            fi
+        done
+    fi
+    # ------------------------------------
+
+    # 2. Generate the thumbs in a separate "thread"
     gen_thumbs() {
         # "$@" cleanly grabs all arguments passed to this function
         for image_path in "$@"; do
@@ -31,7 +55,7 @@ then
     }
     gen_thumbs "${IM_LIST[@]}" &
  
-    # 2. Print to rofi
+    # 3. Print to rofi
     for image_path in "${IM_LIST[@]}"; do
         filename=$(basename "$image_path")
         thumb_path="$THUMB_DIR/${filename%.*}.png"
@@ -45,7 +69,7 @@ else #--------- Second call -------------
     # Make sure the file actually exists before running operations
     if [[ -f "$FULL_PATH" ]]; then
         # 1. Call matugen to generate color scheme
-        (matugen image "$FULL_PATH" -t "$MATUGEN_TYPE")&
+        (matugen image "$FULL_PATH" -t "$MATUGEN_TYPE" -r "$RESIZE_FILTER")&
 
         # 2. Create a miniature background for the NEXT time Rofi opens
         (magick "$FULL_PATH" \
@@ -62,6 +86,3 @@ else #--------- Second call -------------
             "$HYPRLOCK_BG")&
     fi
 fi
-
-
-

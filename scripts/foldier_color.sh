@@ -80,5 +80,11 @@ fi
 
 # Apply the theme dynamically
 (~/.local/bin/papirus-folders -C "$BEST_MATCH")
-echo "done !"
+echo "done setting colors"
+
+#reload icon theme
+CURRENT_ICONS=$(gsettings get org.gnome.desktop.interface icon-theme | tr -d "'")
+gsettings set org.gnome.desktop.interface icon-theme "Adwaita"
+gsettings set org.gnome.desktop.interface icon-theme "$CURRENT_ICONS"
+echo "done reloading icon theme"
 
