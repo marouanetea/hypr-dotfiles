@@ -32,7 +32,6 @@ listview {
 /** ===== Elements ===== **/
 element {
     orientation: vertical;
-   
 }
 element-icon {
     size: calc (200px -30px);

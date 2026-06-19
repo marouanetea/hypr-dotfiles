@@ -12,7 +12,8 @@ hl.config({
     
     -- Mouse options
     follow_mouse = 1,
-    sensitivity = 0.0,
+    sensitivity = -0.3,
+    force_no_accel = true,
 
     -- Default numlock
     numlock_by_default = true,

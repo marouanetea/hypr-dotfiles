@@ -6,6 +6,9 @@
 -- Window & Program Shortcuts
 -- =========================================================================
 
+-- Lock
+hl.bind(_G.mainMod  .. " + L", hl.dsp.exec_cmd("hyprlock"))
+
 -- Window commands
 hl.bind(_G.mainMod  .. " + Q", hl.dsp.window.close())
 hl.bind(_G.mainMod .. " + RETURN", _G.cycle_float_center)
@@ -21,6 +24,7 @@ hl.bind(_G.mainMod  .. " + SPACE", hl.dsp.exec_cmd(_G.menu))
 hl.bind(_G.mainMod  .. " + W", hl.dsp.exec_cmd(_G.wallpaperMenu))
 hl.bind(_G.mainMod  .. " + DELETE", hl.dsp.exec_cmd(_G.powerMenu))
 hl.bind(_G.mainMod  .. " + S", hl.dsp.exec_cmd(_G.socialMenu))
+hl.bind(_G.mainMod  .. " + V", hl.dsp.exec_cmd(_G.cliphistMenu))
 
 -- Mouse 
 hl.bind(_G.mainMod  .. " + mouse:272", hl.dsp.window.drag())

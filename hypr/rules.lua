@@ -30,3 +30,12 @@ hl.window_rule({
   match = { class = "^(io.github.celluloid_player.Celluloid)$" },
   opacity = "1.0 override 1.0 override 1.0 override",
 })
+
+-- For games 
+hl.window_rule({
+  match = { class = "^(steam_app.*)$" },
+  opacity = "1.0 override 1.0 override 1.0 override",
+  float = true,
+  render_unfocused = true,
+  max_size = {1280, 720},
+})

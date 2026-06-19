@@ -19,6 +19,7 @@ _G.menu           = "rofi -show drun -config main.rasi"
 _G.wallpaperMenu  = "rofi -show wallpaper -config wallpaper.rasi"
 _G.powerMenu      = "rofi -show power -config power.rasi"
 _G.socialMenu     = "rofi -show social -config social.rasi"
+_G.cliphistMenu   = "cliphist list | rofi -dmenu -config cliphist.rasi -display-columns 2 -sep '\n'  | cliphist decode | wl-copy"
 
 -- X wayland compatibility
 hl.config({

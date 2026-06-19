@@ -6,6 +6,7 @@
 require("colors")
 
 -- 2. Core Configurations & Inputs
+require("env")
 require("monitors")
 require("input")
 require("general")

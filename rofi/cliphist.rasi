@@ -1,0 +1,42 @@
+/* -- Main config file for the rofi menu */
+
+/* Imports the colors */
+@import "colors.rasi"
+@import "layout.rasi"
+@import "font.rasi"
+
+/** ===== Main Window ===== **/
+window {
+    width:                      30%;
+    height:                     63%;
+}
+
+
+/** ==== Main Box ==== **/
+mainbox {
+    children:                   [ "inputbar", "listview" ];
+}
+
+/** ===== Inputbar ==== **/
+inputbar {
+    children:                   [ "entry"];
+}
+
+entry {
+    placeholder:                "Search ...";
+}
+  
+/** ===== Listview ===== **/
+listview {
+}
+
+
+
+/** ===== Elements ===== **/
+element-icon {
+    enabled:					false;
+}
+element-text {
+    horizontal-align:           0.0;
+    vertical-align:             0.5;
+}
