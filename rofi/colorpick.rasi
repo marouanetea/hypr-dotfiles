@@ -1,0 +1,50 @@
+/* -- Main config file for the power menu */
+
+/* Imports the colors */
+@import "colors.rasi"
+@import "layout.rasi"
+
+* {
+    font:   "Noto Sans Arabic 22";
+}
+
+/** ==== Configuration ==== **/
+configuration {
+    markup-rows:    true;
+}
+
+/** ===== Main Window ===== **/
+window {
+    height: 100px;
+    width: 391px;
+}
+
+/** ==== Main Box ==== **/
+mainbox {
+    children:  [ "listview" ];
+}
+
+/** ===== Listview ===== **/
+listview {
+    layout: horizontal;
+}
+
+/** ===== Elements ===== **/
+element {
+    orientation: vertical;
+    border-radius: 12px;
+    padding: 8px;
+}
+element selected.normal,
+element selected.alternate{
+    background-color:            @primary-container;
+    text-color:                  @on-primary-container;
+}
+element-icon {
+    enabled: false;
+}
+element-text {
+    horizontal-align: 0.5;
+    vertical-align: 1;
+}
+

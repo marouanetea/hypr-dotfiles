@@ -16,7 +16,7 @@ _G.musicPlayer = "g4music"
 
 -- List of menus
 _G.menu           = "rofi -show drun -config main.rasi"
-_G.wallpaperMenu  = "rofi -show wallpaper -config wallpaper.rasi"
+_G.wallpaperMenu  = "~/.config/rofi/modes/wallpaper-menu.sh"
 _G.powerMenu      = "rofi -show power -config power.rasi"
 _G.socialMenu     = "rofi -show social -config social.rasi"
 _G.cliphistMenu   = "cliphist list | rofi -dmenu -config cliphist.rasi -display-columns 2 -sep '\n'  | cliphist decode | wl-copy"

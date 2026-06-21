@@ -2,7 +2,6 @@
 	#config settings
 	contrast = 0.1
 	source_color_index = 0
-	prefer = "darkness"
 	mode = "dark"
 
 [config.custom_colors]
