@@ -14,7 +14,7 @@ configuration {
 /** ===== Main Window ===== **/
 window {
     height: 140px;
-    width: calc ((140px - 38px + 16)*6 +33px);
+    width: calc ((140px - 38px + 17)*7 +28px);
     location : south;
     y-offset : -10%;
 }

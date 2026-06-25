@@ -39,3 +39,10 @@ hl.window_rule({
   render_unfocused = true,
   max_size = {1280, 720},
 })
+hl.window_rule({
+  match = { class = "^(pcsx2-qt.*)$" },
+  opacity = "1.0 override 1.0 override 1.0 override",
+  float = true,
+  render_unfocused = true,
+  max_size = {1280, 720},
+})
