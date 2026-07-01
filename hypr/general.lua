@@ -21,6 +21,9 @@ _G.powerMenu      = "rofi -show power -config power.rasi"
 _G.socialMenu     = "rofi -show social -config social.rasi"
 _G.cliphistMenu   = "cliphist list | rofi -dmenu -config cliphist.rasi -display-columns 2 -sep '\n'  | cliphist decode | wl-copy"
 
+-- Game launcher
+_G.game = "lutris"
+
 -- X wayland compatibility
 hl.config({
 	xwayland = {

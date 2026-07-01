@@ -11,6 +11,7 @@ hl.bind(_G.mainMod  .. " + L", hl.dsp.exec_cmd("hyprlock"))
 
 -- Window commands
 hl.bind(_G.mainMod  .. " + Q", hl.dsp.window.close())
+hl.bind("ALT + F4", hl.dsp.window.close())
 hl.bind(_G.mainMod .. " + RETURN", _G.cycle_float_center)
 
 -- Program shortcuts
@@ -18,6 +19,7 @@ hl.bind(_G.mainMod  .. " + T", hl.dsp.exec_cmd(_G.terminal))
 hl.bind(_G.mainMod  .. " + F", hl.dsp.exec_cmd(_G.fileManager))
 hl.bind(_G.mainMod  .. " + B", hl.dsp.exec_cmd(_G.browser))
 hl.bind(_G.mainMod  .. " + M", hl.dsp.exec_cmd(_G.musicPlayer))
+hl.bind(_G.mainMod  .. " + G", hl.dsp.exec_cmd(_G.game))
 
 -- Custom rofi menus
 hl.bind(_G.mainMod  .. " + SPACE", hl.dsp.exec_cmd(_G.menu))
@@ -33,6 +35,8 @@ hl.bind(_G.mainMod  .. " + mouse:273", hl.dsp.window.resize())
 -- Emergency
 hl.bind("SUPER + ALT + CTRL + ESCAPE", hl.dsp.exec_cmd(_G.shutDown))
 hl.bind("ALT + CTRL + DELETE", hl.dsp.exec_cmd("hyprctl kill"))
+hl.bind("SHIFT + CTRL + DELETE", hl.dsp.exec_cmd("[float; center; size 1000 700] kitty htop"))
+hl.bind("CTRL + DELETE", hl.dsp.exec_cmd("[float; center; size 1000 700] gnome-system-monitor"))
 
 -- =========================================================================
 -- Workspaces (Generated via Loop)
@@ -83,7 +87,7 @@ hl.bind(_G.mainMod .. " + F10",hl.dsp.exec_cmd( "swayosd-client --output-volume 
 
 -- Laptop
 hl.bind("XF86MonBrightnessUp",   hl.dsp.exec_cmd( "swayosd-client --brightness raise"))
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd( "wayosd-client --brightness lower"))
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd( "swayosd-client --brightness lower"))
 -- Keyboar
 hl.bind("F12", hl.dsp.exec_cmd( "swayosd-client --brightness raise"), {repeating = true})
 hl.bind("F11", hl.dsp.exec_cmd( "swayosd-client --brightness lower"), {repeating = true})

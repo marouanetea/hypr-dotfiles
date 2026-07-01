@@ -18,6 +18,7 @@ hl.on("hyprland.start", function ()
 	hl.exec_cmd("blueman-applet")
 	hl.exec_cmd("swaync")
 	hl.exec_cmd("swayosd-server")
+	hl.exec_cmd("hypridle")
 
 	-- Clipboard manager	 
 	hl.exec_cmd("wl-paste --type text --watch cliphist store")
