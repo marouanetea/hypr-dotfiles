@@ -1,7 +1,7 @@
 /* Style for ALL open window icons (default state) */
 button {
-    padding: 7px 7px;
-    margin:  0px 2px;
+    padding: 0px 7px;
+    margin:  5px 2px;
     background-color: transparent; 
     color: @on_surface;
     border: 0px;
@@ -12,8 +12,8 @@ button.active {
     color: @primary;
 }
 
-#taskbar button:hover,
-#taskbar button.active:hover{
+button:hover,
+button.active:hover{
     background-color: @primary_container;
     color: @primary;
 }

@@ -1,8 +1,8 @@
 {
 	"hyprland/workspaces": {
-		"disable-scroll": true,
 		"all-outputs": true,
 		"format": "{icon}",
+	    "on-click": "activate",
 		"format-icons": {
 			"active": "●",
 			"default": "○"

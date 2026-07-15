@@ -5,6 +5,14 @@ This setup utilizes a custom image processing pipeline that generates material c
 
 ---
 
+## Core Dependencies
+To ensure everything runs seamlessly, your system will require:
+
+- Window Manager: hyprland, hyprlock
+- Theming & Utilities: matugen, awww, papirus-icon-theme
+- UI Components: rofi, waybar, swaync, kitty
+- Dependencies for Scripts: imagemagick (for thumbnail generation and blurring), jq (for parsing cached Matugen JSON colors).
+
 ## Repository Structure
 
 All configuration files live in `~/.dotfiles` and are symlinked into their respective locations in `~/.config`.
@@ -81,10 +89,3 @@ Once Matugen ingests the selected wallpaper parameters, it regenerates and appli
 > [!NOTE]
 > ***Papirus Folders Integration:*** Because how you install the papirus-folders script may vary, you might want to edit the last lines of `~/.dotfiles/scripts/foldier_color.sh` to point it to where you keep the script. The current script expects it to exist in `~/.local/bin/papirus-folders`.
 
-## Core Dependencies
-To ensure everything runs seamlessly, your system will require:
-
-- Window Manager: hyprland, hyprlock
-- Theming & Utilities: matugen, awww, papirus-icon-theme
-- UI Components: rofi, waybar, swaync, kitty
-- Dependencies for Scripts: imagemagick (for thumbnail generation and blurring), jq (for parsing cached Matugen JSON colors).
