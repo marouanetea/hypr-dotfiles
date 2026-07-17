@@ -21,7 +21,7 @@
 
     @define-color blue_value #0000ff;
 
-    @define-color cyan #50d7ed;
+    @define-color cyan #50d7ee;
 
     @define-color cyan_container #005b66;
 
@@ -103,7 +103,7 @@
 
     @define-color on_primary_fixed #001f29;
 
-    @define-color on_primary_fixed_variant #004d62;
+    @define-color on_primary_fixed_variant #004d63;
 
     @define-color on_purple #491561;
 
@@ -117,7 +117,7 @@
 
     @define-color on_secondary_container #ffffff;
 
-    @define-color on_secondary_fixed #071e26;
+    @define-color on_secondary_fixed #081e26;
 
     @define-color on_secondary_fixed_variant #354a53;
 
@@ -131,7 +131,7 @@
 
     @define-color on_tertiary_fixed #181837;
 
-    @define-color on_tertiary_fixed_variant #444465;
+    @define-color on_tertiary_fixed_variant #444464;
 
     @define-color on_white #00343b;
 
@@ -153,13 +153,13 @@
 
     @define-color outline_variant #525252;
 
-    @define-color primary #60d4fe;
+    @define-color primary #61d4fe;
 
     @define-color primary_container #005971;
 
-    @define-color primary_fixed #baeaff;
+    @define-color primary_fixed #bbe9ff;
 
-    @define-color primary_fixed_dim #60d4fe;
+    @define-color primary_fixed_dim #61d4fe;
 
     @define-color purple #eab2ff;
 
@@ -183,13 +183,13 @@
 
     @define-color secondary_container #40555e;
 
-    @define-color secondary_fixed #cfe6f1;
+    @define-color secondary_fixed #cfe6f2;
 
     @define-color secondary_fixed_dim #b4cad5;
 
     @define-color shadow #000000;
 
-    @define-color source_color #a0e1fd;
+    @define-color source_color #a2dffa;
 
     @define-color surface #131313;
 
@@ -207,7 +207,7 @@
 
     @define-color surface_dim #131313;
 
-    @define-color surface_tint #60d4fe;
+    @define-color surface_tint #61d4fe;
 
     @define-color surface_variant #474747;
 

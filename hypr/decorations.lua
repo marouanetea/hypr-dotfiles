@@ -42,5 +42,7 @@ hl.config(
 			color = "0x44000000",          -- Hex ARGB notation
 			color_inactive = "0x22000000", -- Hex ARGB notation
 		},
+
+		dim_around = 0.8
 	},
 })

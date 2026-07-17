@@ -46,12 +46,12 @@
 	surface-container-highest: {{colors.surface_container_highest.default.hex}};
 
 	/** ==== Transparent surfaces ==== **/
-	surface-transparent: {{colors.surface.default.hex}}aa;
-	surface-dim-transparent: {{colors.surface_dim.default.hex}}aa;
-	surface-bright-transparent: {{colors.surface_bright.default.hex}}aa;
-	surface-container-lowest-transparent: {{colors.surface_container_lowest.default.hex}}aa;
-	surface-container-low-transparent: {{colors.surface_container_low.default.hex}}aa;
-	surface-container-transparent: {{colors.surface_container.default.hex}}aa;
-	surface-container-high-transparent: {{colors.surface_container_high.default.hex}}aa;
-	surface-container-highest-transparent: {{colors.surface_container_highest.default.hex}}aa;
+	surface-transparent: {{colors.surface.default.hex}}cc;
+	surface-dim-transparent: {{colors.surface_dim.default.hex}}cc;
+	surface-bright-transparent: {{colors.surface_bright.default.hex}}cc;
+	surface-container-lowest-transparent: {{colors.surface_container_lowest.default.hex}}cc;
+	surface-container-low-transparent: {{colors.surface_container_low.default.hex}}cc;
+	surface-container-transparent: {{colors.surface_container.default.hex}}cc;
+	surface-container-high-transparent: {{colors.surface_container_high.default.hex}}cc;
+	surface-container-highest-transparent: {{colors.surface_container_highest.default.hex}}cc;
 }

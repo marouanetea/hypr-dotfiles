@@ -1,17 +1,17 @@
 * {
-	primary: #60d4fe;
-	primary-fixed: #baeaff;
-	primary-fixed-dim: #60d4fe;
+	primary: #61d4fe;
+	primary-fixed: #bbe9ff;
+	primary-fixed-dim: #61d4fe;
 	on-primary: #003343;
 	on-primary-fixed: #001f29;
-	on-primary-fixed-variant: #004d62;
+	on-primary-fixed-variant: #004d63;
 	primary-container: #005971;
 	on-primary-container: #ffffff;
 	secondary: #b4cad5;
-	secondary-fixed: #cfe6f1;
+	secondary-fixed: #cfe6f2;
 	secondary-fixed-dim: #b4cad5;
 	on-secondary: #1d323a;
-	on-secondary-fixed: #071e26;
+	on-secondary-fixed: #081e26;
 	on-secondary-fixed-variant: #354a53;
 	secondary-container: #40555e;
 	on-secondary-container: #ffffff;
@@ -20,7 +20,7 @@
 	tertiary-fixed-dim: #c5c3ea;
 	on-tertiary: #2c2c4b;
 	on-tertiary-fixed: #181837;
-	on-tertiary-fixed-variant: #444465;
+	on-tertiary-fixed-variant: #444464;
 	tertiary-container: #4f4f70;
 	on-tertiary-container: #ffffff;
 	error: #ffb4ab;
@@ -46,12 +46,12 @@
 	surface-container-highest: #363636;
 
 	/** ==== Transparent surfaces ==== **/
-	surface-transparent: #131313aa;
-	surface-dim-transparent: #131313aa;
-	surface-bright-transparent: #3b3b3baa;
-	surface-container-lowest-transparent: #0d0d0daa;
-	surface-container-low-transparent: #1c1c1caa;
-	surface-container-transparent: #212121aa;
-	surface-container-high-transparent: #2c2c2caa;
-	surface-container-highest-transparent: #363636aa;
+	surface-transparent: #131313cc;
+	surface-dim-transparent: #131313cc;
+	surface-bright-transparent: #3b3b3bcc;
+	surface-container-lowest-transparent: #0d0d0dcc;
+	surface-container-low-transparent: #1c1c1ccc;
+	surface-container-transparent: #212121cc;
+	surface-container-high-transparent: #2c2c2ccc;
+	surface-container-highest-transparent: #363636cc;
 }

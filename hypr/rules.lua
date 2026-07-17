@@ -14,6 +14,11 @@ hl.layer_rule({
 	ignore_alpha = 0.1
 })
 
+hl.layer_rule({
+	match = { namespace = "^(swaync-control-center|swaync-notification-window)" }, 
+	blur = true,
+	ignore_alpha = 0.1
+})
 
 -- =========================================================================
 -- Window Rules
