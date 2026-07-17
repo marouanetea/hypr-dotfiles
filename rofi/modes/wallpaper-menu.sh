@@ -154,7 +154,8 @@ fi
 (matugen image "$FULL_PATH" -t "$MATUGEN_TYPE" -r "$RESIZE_FILTER" --prefer "$CHOSEN_PREF")&
 
 #6.. Create a miniature background for the NEXT time Rofi opens
-(magick "$FULL_PATH" -resize 800x450^ -gravity center  -crop 800x450+0+0  -blur 0x12  -fill black -colorize 20%  "$ROFI_BG") &
+#(magick "$FULL_PATH" -resize 800x450^ -gravity center  -crop 800x450+0+0  -blur 0x12  -fill black -colorize 20%  "$ROFI_BG") &
+#This was removed and no longer needed due to new rofi relying on true blur on hyprland level
 
 #7. Create a blurred version to use as hyprlock bg
 (magick "$FULL_PATH" -fill black -colorize 20%  "$HYPRLOCK_BG") &

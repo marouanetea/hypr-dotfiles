@@ -21,10 +21,11 @@ window {
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
-    border:                      1px solid;
+    border:                      0px solid;
     cursor:                      "default";
     border-radius:               30px;
     border-color:                @outline;
+    background-color:            rgba(0, 0, 0, 0);
 }
 
 /** ==== Main Box ==== **/
@@ -36,7 +37,7 @@ mainbox {
     border:                      0px solid;
     border-radius:               0px 0px 0px 0px;
     border-color:                transparent;
-    background-color:            @surface;
+    background-color:            @surface-transparent;
 }
 
 /** ===== Inputbar ==== **/
@@ -48,15 +49,13 @@ inputbar {
     padding:                     7% 1%;
     border:                      0px 0px 0px 0px solid;
     border-radius:               0px;
-    background-color:            @surface-container-high;
-    text-color:                  @on-surface-variant;
-    
-    background-image:           url("/home/marouane/.config/cache/rofi_bg.png", width);
+    background-color:            #00000000;
+    text-color:                  @on-surface-variant;    
 }
 
 textbox-prompt-colon {
     enabled:                     true;
-    background-color:            inherit;
+    background-color:            @surface-container-high;
     text-color:                  inherit;
     border-radius:               30px;
     padding:                     5px 15px;
@@ -65,7 +64,7 @@ textbox-prompt-colon {
 }
 entry {
     enabled:                     true;
-    background-color:            inherit;
+    background-color:            #00000033;
     text-color:                  inherit;
     border-radius:               30px;
     padding:                     0.2em 1em;
@@ -83,7 +82,7 @@ mode-switcher{
 button {
     width:                       80px;
     border-radius:               30px;
-    background-color:            @surface-container-highest;
+    background-color:            #00000033;
     text-color:                  @on-surface-variant;
     cursor:                      pointer;
     vertical-align: 0.5;

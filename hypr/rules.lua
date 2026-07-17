@@ -3,9 +3,15 @@
 -- =========================================================================
 
 hl.layer_rule({
-  match = { namespace = "wlogout" },
-  blur = true,
-  dim_around = true,
+	match = { namespace = "waybar" }, 
+	blur = true,
+	ignore_alpha = 0.1
+})
+
+hl.layer_rule({
+	match = { namespace = "rofi" }, 
+	blur = true,
+	ignore_alpha = 0.1
 })
 
 
