@@ -26,3 +26,10 @@ hl.env("__NV_PRIME_RENDER_OFFLOAD", "0")
 
 -- Tell vulkan to sort the intel ship first, for GTK to use intel 
 hl.env("VK_LOADER_DEVICE_SELECT", "8086")
+
+-- X wayland compatibility
+hl.config({
+	xwayland = {
+		force_zero_scaling = true
+	}
+})

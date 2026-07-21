@@ -1,7 +1,9 @@
 -- =========================================================================
 -- Custom lua functions
 -- =========================================================================
-_G.cycle_float_center = function()
+local functions = {}
+
+functions.cycle_float_center = function()
 	local w = hl.get_active_window()
 
 	if w == nil then return end
@@ -17,3 +19,5 @@ _G.cycle_float_center = function()
 		hl.dispatch(hl.dsp.window.center({ action = "set" }))
 	end
 end
+
+return functions

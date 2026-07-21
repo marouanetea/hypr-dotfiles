@@ -2,6 +2,8 @@
 -- Visual Theme (Borders, Gaps, Blur & Opacity)
 -- =========================================================================
 
+local colors = require ("colors")
+
 hl.config(
 {
 	general = {
@@ -11,8 +13,8 @@ hl.config(
 
 		-- Glass-style borders
 		col={
-			active_border = _G.primary_col,
-			inactive_border = _G.secondary_col,
+			active_border = colors.primary_col,
+			inactive_border = colors.secondary_col,
 		},
 	},
 

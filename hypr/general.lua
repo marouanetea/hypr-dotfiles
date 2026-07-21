@@ -2,31 +2,28 @@
 -- Global / Configuration Variables
 -- =========================================================================
 
--- Shutdown command
-_G.shutDown = "command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"
+local general = {
+	-- Shutdown command
+	shutDown = "command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit",
 
--- Main mod
-_G.mainMod     = "SUPER"
+	-- Main mod
+	mainMod     = "SUPER",
 
--- Prefered programs
-_G.terminal    = "kitty"
-_G.fileManager = "nautilus"
-_G.browser = "chromium"
-_G.musicPlayer = "g4music"
+	-- Prefered programs
+	terminal    = "kitty",
+	fileManager = "nautilus",
+	browser = "chromium",
+	musicPlayer = "g4music",
 
--- List of menus
-_G.menu           = "rofi -show drun -config main.rasi"
-_G.wallpaperMenu  = "~/.config/rofi/modes/wallpaper-menu.sh"
-_G.powerMenu      = "rofi -show power -config power.rasi"
-_G.socialMenu     = "rofi -show social -config social.rasi"
-_G.cliphistMenu   = "cliphist list | rofi -dmenu -config cliphist.rasi -display-columns 2 -sep '\n'  | cliphist decode | wl-copy"
+	-- List of menus
+	menu           = "rofi -show drun -config main.rasi",
+	wallpaperMenu  = "~/.config/rofi/modes/wallpaper-menu.sh",
+	powerMenu      = "rofi -show power -config power.rasi",
+	socialMenu     = "rofi -show social -config social.rasi",
+	cliphistMenu   = "cliphist list | rofi -dmenu -config cliphist.rasi -display-columns 2 -sep '\n'  | cliphist decode | wl-copy",
 
--- Game launcher
-_G.game = "lutris"
+	-- Game launcher
+	game = "lutris"
+}
 
--- X wayland compatibility
-hl.config({
-	xwayland = {
-		force_zero_scaling = true
-	}
-})
+return general

@@ -2,7 +2,11 @@
 -- Color Definitions (ARGB Format)
 -- =========================================================================
 
-_G.primary_col = "0xff61d4fe"
-_G.secondary_col = "0xffb4cad5"
-_G.background_col  = "0.xff131313"
+local colors = {
+	primary_col = "0xffffb2bd",
+	secondary_col = "0xffe5bdc1",
+	background_col  = "0xff131313"
+}
+
+return colors
 

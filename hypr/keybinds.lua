@@ -1,39 +1,40 @@
 -- =========================================================================
 -- Variables & Core Bind Modifiers
 -- =========================================================================
-
+local general = require("general")
+local functions = require("functions")
 -- =========================================================================
 -- Window & Program Shortcuts
 -- =========================================================================
 
 -- Lock
-hl.bind(_G.mainMod  .. " + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(general.mainMod  .. " + L", hl.dsp.exec_cmd("hyprlock"))
 
 -- Window commands
-hl.bind(_G.mainMod  .. " + Q", hl.dsp.window.close())
+hl.bind(general.mainMod  .. " + Q", hl.dsp.window.close())
 hl.bind("ALT + F4", hl.dsp.window.close())
-hl.bind(_G.mainMod .. " + RETURN", _G.cycle_float_center)
+hl.bind(general.mainMod .. " + RETURN", functions.cycle_float_center)
 
 -- Program shortcuts
-hl.bind(_G.mainMod  .. " + T", hl.dsp.exec_cmd(_G.terminal))
-hl.bind(_G.mainMod  .. " + F", hl.dsp.exec_cmd(_G.fileManager))
-hl.bind(_G.mainMod  .. " + B", hl.dsp.exec_cmd(_G.browser))
-hl.bind(_G.mainMod  .. " + M", hl.dsp.exec_cmd(_G.musicPlayer))
-hl.bind(_G.mainMod  .. " + G", hl.dsp.exec_cmd(_G.game))
+hl.bind(general.mainMod  .. " + T", hl.dsp.exec_cmd(general.terminal))
+hl.bind(general.mainMod  .. " + F", hl.dsp.exec_cmd(general.fileManager))
+hl.bind(general.mainMod  .. " + B", hl.dsp.exec_cmd(general.browser))
+hl.bind(general.mainMod  .. " + M", hl.dsp.exec_cmd(general.musicPlayer))
+hl.bind(general.mainMod  .. " + G", hl.dsp.exec_cmd(general.game))
 
 -- Custom rofi menus
-hl.bind(_G.mainMod  .. " + SPACE", hl.dsp.exec_cmd(_G.menu))
-hl.bind(_G.mainMod  .. " + W", hl.dsp.exec_cmd(_G.wallpaperMenu))
-hl.bind(_G.mainMod  .. " + DELETE", hl.dsp.exec_cmd(_G.powerMenu))
-hl.bind(_G.mainMod  .. " + S", hl.dsp.exec_cmd(_G.socialMenu))
-hl.bind(_G.mainMod  .. " + V", hl.dsp.exec_cmd(_G.cliphistMenu))
+hl.bind(general.mainMod  .. " + SPACE", hl.dsp.exec_cmd(general.menu))
+hl.bind(general.mainMod  .. " + W", hl.dsp.exec_cmd(general.wallpaperMenu))
+hl.bind(general.mainMod  .. " + DELETE", hl.dsp.exec_cmd(general.powerMenu))
+hl.bind(general.mainMod  .. " + S", hl.dsp.exec_cmd(general.socialMenu))
+hl.bind(general.mainMod  .. " + V", hl.dsp.exec_cmd(general.cliphistMenu))
 
 -- Mouse 
-hl.bind(_G.mainMod  .. " + mouse:272", hl.dsp.window.drag())
-hl.bind(_G.mainMod  .. " + mouse:273", hl.dsp.window.resize())
+hl.bind(general.mainMod  .. " + mouse:272", hl.dsp.window.drag())
+hl.bind(general.mainMod  .. " + mouse:273", hl.dsp.window.resize())
 
 -- Emergency
-hl.bind("SUPER + ALT + CTRL + ESCAPE", hl.dsp.exec_cmd(_G.shutDown))
+hl.bind("SUPER + ALT + CTRL + ESCAPE", hl.dsp.exec_cmd(general.shutDown))
 hl.bind("ALT + CTRL + DELETE", hl.dsp.exec_cmd("hyprctl kill"))
 hl.bind("SHIFT + CTRL + DELETE", hl.dsp.exec_cmd("[float; center; size 1000 700] kitty htop"))
 hl.bind("CTRL + DELETE", hl.dsp.exec_cmd("[float; center; size 1000 700] gnome-system-monitor"))
@@ -47,10 +48,10 @@ for i = 1, 9 do
 	local keycode = 10 + i
 	local workspace = { workspace = tostring(i) }
 
-  hl.bind(_G.mainMod .. " + code:" .. keycode, hl.dsp.focus(workspace))
+  hl.bind(general.mainMod .. " + code:" .. keycode, hl.dsp.focus(workspace))
 
   -- Move active window to workspace (e.g., SUPER ALT + code:10 -> movetoworkspace 1)
-  hl.bind(_G.mainMod .. " + ALT + code:" .. keycode, hl.dsp.window.move (workspace))
+  hl.bind(general.mainMod .. " + ALT + code:" .. keycode, hl.dsp.window.move (workspace))
 end
 
 -- =========================================================================
@@ -58,12 +59,12 @@ end
 -- =========================================================================
 
 -- Switch workspace +-1
-hl.bind(_G.mainMod .. " + right", hl.dsp.focus({ workspace = tostring("r+1") }))
-hl.bind(_G.mainMod .. " + left",  hl.dsp.focus({ workspace = tostring("r-1") }))
+hl.bind(general.mainMod .. " + right", hl.dsp.focus({ workspace = tostring("r+1") }))
+hl.bind(general.mainMod .. " + left",  hl.dsp.focus({ workspace = tostring("r-1") }))
 
 -- Move active window to workspace +-1
-hl.bind(_G.mainMod .. " + ALT + right",  hl.dsp.window.move ({ workspace = tostring("r+1") }))
-hl.bind(_G.mainMod .. " + ALT + left",  hl.dsp.window.move ({ workspace = tostring("r-1") }))
+hl.bind(general.mainMod .. " + ALT + right",  hl.dsp.window.move ({ workspace = tostring("r+1") }))
+hl.bind(general.mainMod .. " + ALT + left",  hl.dsp.window.move ({ workspace = tostring("r-1") }))
 
 
 -- =========================================================================
@@ -78,8 +79,8 @@ hl.bind("XF86AudioMute",       	hl.dsp.exec_cmd( "swayosd-client --output-volume
 -- Keyboard
 hl.bind("F10", hl.dsp.exec_cmd( "swayosd-client --output-volume raise"), {repeating = true})
 hl.bind("F9",  hl.dsp.exec_cmd( "swayosd-client --output-volume lower"), {repeating = true})
-hl.bind(_G.mainMod .. " + F9", hl.dsp.exec_cmd( "swayosd-client --output-volume mute-toggle"))
-hl.bind(_G.mainMod .. " + F10",hl.dsp.exec_cmd( "swayosd-client --output-volume mute-toggle"))
+hl.bind(general.mainMod .. " + F9", hl.dsp.exec_cmd( "swayosd-client --output-volume mute-toggle"))
+hl.bind(general.mainMod .. " + F10",hl.dsp.exec_cmd( "swayosd-client --output-volume mute-toggle"))
 
 -- =========================================================================
 -- Screen brightness controls
@@ -95,16 +96,16 @@ hl.bind("F11", hl.dsp.exec_cmd( "swayosd-client --brightness lower"), {repeating
 -- =========================================================================
 -- Media playback
 -- =========================================================================
-hl.bind(_G.mainMod .. " + KP_Begin",       	hl.dsp.exec_cmd( "playerctl play-pause"))
-hl.bind(_G.mainMod .. " + KP_Right",       	hl.dsp.exec_cmd( "playerctl next"))
-hl.bind(_G.mainMod .. " + KP_Left",       	hl.dsp.exec_cmd( "playerctl previous"))
+hl.bind(general.mainMod .. " + KP_Begin",       	hl.dsp.exec_cmd( "playerctl play-pause"))
+hl.bind(general.mainMod .. " + KP_Right",       	hl.dsp.exec_cmd( "playerctl next"))
+hl.bind(general.mainMod .. " + KP_Left",       	hl.dsp.exec_cmd( "playerctl previous"))
 
 -- =========================================================================
 -- hyprshot
 -- =========================================================================
 hl.bind("Print",       	hl.dsp.exec_cmd( "hyprshot -m output -m eDP-1 -o ~/Pictures/screenshots"))
 hl.bind("ALT + Print",       	hl.dsp.exec_cmd( "hyprshot -m window -m active -o ~/Pictures/screenshots"))
-hl.bind(_G.mainMod .. " + Print",       	hl.dsp.exec_cmd( "hyprshot -m region -m eDP-1 -o ~/Pictures/screenshots"))
+hl.bind(general.mainMod .. " + Print",       	hl.dsp.exec_cmd( "hyprshot -m region -m eDP-1 -o ~/Pictures/screenshots"))
 
 
 
