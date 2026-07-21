@@ -2,23 +2,23 @@
 -- Hyprland Main Entry Point
 -- =========================================================================
 
--- 2. Core Configurations & Inputs
+-- 1. Core Configurations & Inputs
 require("env")
 require("monitors")
 require("input")
 
--- 3. Themes & Looks
+-- 2. Themes & Looks
 require("decorations")
 -- require("animations") -- Uncomment when you port your animation curves!
 
--- 4. Rules & Actions
+-- 3. Rules & Actions
 require("rules")
 
--- 5. Window Keybinds & Shortcuts
+-- 4. Window Keybinds & Shortcuts
 require("keybinds")
 
--- 6. Autostart Applications
+-- 5. Autostart Applications
 require("exec")
 
--- 7. Animations
+-- 6. Animations
 require("animations")

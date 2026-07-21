@@ -4,10 +4,6 @@
 
 hl.on("hyprland.start", function ()
 
-	-- Pretend we are GNOME for nautilus to respect gsettings
-	hl.env("XDG_CURRENT_DESKTOP", "GNOME")
-	hl.env("XDG_MENU_PREFIX", "gnome-")
-
 	-- Update the DBus and systemd activation environments
 	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=GNOME")
 
