@@ -2,6 +2,15 @@
 -- Environment Variables
 -- =========================================================================
 
+-- Force hyprland as the current desktop, because of GDM forcing it to be gnome
+hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
+hl.env("XDG_SESSION_TYPE", "wayland")
+hl.env("XDG_SESSION_DESKTOP", "Hyprland")
+hl.on("hyprland.start", function()
+    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+end)
+
+
 -- Add local home to path
 local current_path = os.getenv("PATH") or "/usr/local/bin:/usr/bin:/bin"
 local current_home = os.getenv("HOME")
