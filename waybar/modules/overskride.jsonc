@@ -1,0 +1,9 @@
+{
+	"custom/overskride": {
+		"tooltip": false,
+		"format": "",
+		"on-click": "overskride",
+		"on-click-right": "overskride",
+		"escape": true
+	},
+}

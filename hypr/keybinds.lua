@@ -38,6 +38,7 @@ hl.bind("SUPER + ALT + CTRL + ESCAPE", hl.dsp.exec_cmd(general.shutDown))
 hl.bind("ALT + CTRL + DELETE", hl.dsp.exec_cmd("hyprctl kill"))
 hl.bind("SHIFT + CTRL + DELETE", hl.dsp.exec_cmd("[float; center; size 1000 700] kitty htop"))
 hl.bind("CTRL + DELETE", hl.dsp.exec_cmd("[float; center; size 1000 700] gnome-system-monitor"))
+hl.bind("CTRL + SHIFT + W", hl.dsp.exec_cmd("killall waybar && waybar"))
 
 -- =========================================================================
 -- Workspaces (Generated via Loop)

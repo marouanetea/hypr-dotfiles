@@ -11,7 +11,8 @@ To ensure everything runs seamlessly, your system will require:
 - Window Manager: hyprland, hyprlock
 - Theming & Utilities: matugen, awww, papirus-icon-theme
 - UI Components: rofi, waybar, swaync, kitty
-- Dependencies for Scripts: imagemagick (for thumbnail generation and blurring), jq (for parsing cached Matugen JSON colors).
+- Scripts: imagemagick (for thumbnail generation and blurring), jq (for parsing cached Matugen JSON colors).
+- Other utilities : Overskride, nmgui
 
 ## Repository Structure
 

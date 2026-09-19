@@ -1,8 +1,6 @@
 [config]
 	#config settings
 	contrast = 0.1
-	source_color_index = 0
-	mode = "dark"
 
 [config.custom_colors]
 	# --- Rainbow Spectrum ---

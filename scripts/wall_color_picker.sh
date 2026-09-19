@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-MATUGEN_TYPE="scheme-rainbow"
+MATUGEN_TYPE="scheme-smart"
 RESIZE_FILTER="catmull-rom"
+PREFER="darkness"
+MODE="dark"
 
 WALL_DIR="$HOME/.config/wallpapers"
 CACHE_DIR="$HOME/.config/cache"
@@ -73,25 +75,22 @@ for image_path in "${IM_LIST[@]}"; do
     if [[ ! -f "$json_path" ]]; then
     	NEEDS_WAIT=1
         (
-        	DARK_JSON=$(matugen image "$image_path" -t "$MATUGEN_TYPE" -r "$RESIZE_FILTER" --dry-run --json hex --prefer darkness)
-        	LIGH_JSON=$(matugen image "$image_path" -t "$MATUGEN_TYPE" -r "$RESIZE_FILTER" --dry-run --json hex --prefer lightness)
-        	SATU_JSON=$(matugen image "$image_path" -t "$MATUGEN_TYPE" -r "$RESIZE_FILTER" --dry-run --json hex --prefer saturation)
-        	LSAT_JSON=$(matugen image "$image_path" -t "$MATUGEN_TYPE" -r "$RESIZE_FILTER" --dry-run --json hex --prefer less-saturation)
-        	VALU_JSON=$(matugen image "$image_path" -t "$MATUGEN_TYPE" -r "$RESIZE_FILTER" --dry-run --json hex --prefer value)
+        	COLOR_JSON0=$(matugen image "$image_path" -t "$MATUGEN_TYPE" -r "$RESIZE_FILTER" --dry-run --json hex --prefer "$PREFER" -m "$MODE" --source-color-index 0)
+        	COLOR_JSON1=$(matugen image "$image_path" -t "$MATUGEN_TYPE" -r "$RESIZE_FILTER" --dry-run --json hex --prefer "$PREFER" -m "$MODE" --source-color-index 1)
+        	COLOR_JSON2=$(matugen image "$image_path" -t "$MATUGEN_TYPE" -r "$RESIZE_FILTER" --dry-run --json hex --prefer "$PREFER" -m "$MODE" --source-color-index 2)
+        	COLOR_JSON3=$(matugen image "$image_path" -t "$MATUGEN_TYPE" -r "$RESIZE_FILTER" --dry-run --json hex --prefer "$PREFER" -m "$MODE" --source-color-index 3)
 
-        	DARK_COL=$(echo "$DARK_JSON" | jq -r ".colors.primary.default.color")
-        	LIGH_COL=$(echo "$LIGH_JSON" | jq -r ".colors.primary.default.color")
-        	SATU_COL=$(echo "$SATU_JSON" | jq -r ".colors.primary.default.color")
-        	LSAT_COL=$(echo "$LSAT_JSON" | jq -r ".colors.primary.default.color")
-        	VALU_COL=$(echo "$VALU_JSON" | jq -r ".colors.primary.default.color")
+        	COLOR_JSON0=$(echo "$COLOR_JSON0" | jq -r ".colors.primary.default.color")
+        	COLOR_JSON1=$(echo "$COLOR_JSON1" | jq -r ".colors.primary.default.color")
+        	COLOR_JSON2=$(echo "$COLOR_JSON2" | jq -r ".colors.primary.default.color")
+        	COLOR_JSON3=$(echo "$COLOR_JSON3" | jq -r ".colors.primary.default.color")
 
 			jq -n \
-				--arg dk "$DARK_COL" \
-				--arg lg "$LIGH_COL" \
-				--arg st "$SATU_COL" \
-				--arg ls "$LSAT_COL" \
-				--arg vl "$VALU_COL" \
-				'{darkness: $dk, lightness: $lg, saturation: $st, less_saturation: $ls, value: $vl}' > "$json_path"
+				--arg c0 "$COLOR_JSON0" \
+				--arg c1 "$COLOR_JSON1" \
+				--arg c2 "$COLOR_JSON2" \
+				--arg c3 "$COLOR_JSON3" \
+				'{color0: $c0, color1: $c1, color2: $c2, color3: $c3}' > "$json_path"
         )&
     fi
 done
@@ -118,18 +117,24 @@ fi
 
 JSON_COLOR=$(cat "$THUMB_DIR/$SELECTED_NAME.json")
 
-DARK_COL=$(echo "$JSON_COLOR" | jq -r ".darkness")
-LIGH_COL=$(echo "$JSON_COLOR" | jq -r ".lightness")
-SATU_COL=$(echo "$JSON_COLOR" | jq -r ".saturation")
-LSAT_COL=$(echo "$JSON_COLOR" | jq -r ".less_saturation")
-VALU_COL=$(echo "$JSON_COLOR" | jq -r ".value")
+COLOR_JSON0=$(echo "$JSON_COLOR" | jq -r ".color0")
+COLOR_JSON1=$(echo "$JSON_COLOR" | jq -r ".color1")
+COLOR_JSON2=$(echo "$JSON_COLOR" | jq -r ".color2")
+COLOR_JSON3=$(echo "$JSON_COLOR" | jq -r ".color3")
 
 COLOR_LIST=""
-COLOR_LIST+="<span background=\"$DARK_COL\">       </span>\n"
-COLOR_LIST+="<span background=\"$LIGH_COL\">       </span>\n"
-COLOR_LIST+="<span background=\"$SATU_COL\">       </span>\n"
-COLOR_LIST+="<span background=\"$LSAT_COL\">       </span>\n"
-COLOR_LIST+="<span background=\"$VALU_COL\">       </span>\n"
+if [[ -n "$COLOR_JSON0" ]]; then
+	COLOR_LIST+="<span background=\"$COLOR_JSON0\">       </span>\n"
+fi
+if [[ -n "$COLOR_JSON1" ]]; then
+	COLOR_LIST+="<span background=\"$COLOR_JSON1\">       </span>\n"
+fi
+if [[ -n "$COLOR_JSON2" ]]; then
+	COLOR_LIST+="<span background=\"$COLOR_JSON2\">       </span>\n"
+fi
+if [[ -n "$COLOR_JSON3" ]]; then
+	COLOR_LIST+="<span background=\"$COLOR_JSON3\">       </span>\n"
+fi
 
 
 
@@ -139,19 +144,9 @@ CHOICE=$(echo -en "$COLOR_LIST" | rofi -dmenu -markup-rows -format i -config col
 if [[ ! -n "$CHOICE" ]]; then
 	exit 0
 fi
-case "$CHOICE" in
-	*"0"*) CHOSEN_PREF="darkness"	;;
-    *"1"*) CHOSEN_PREF="lightness"	;;
-    *"2"*) CHOSEN_PREF="saturation"	;;
-	*"3"*) CHOSEN_PREF="less-saturation"	;;
-	*"4"*) CHOSEN_PREF="value"	;;
-esac
 
-if [[ ! -n "$CHOSEN_PREF" ]]; then
-	exit 0
-fi
 #5. We finally run matugen
-(matugen image "$FULL_PATH" -t "$MATUGEN_TYPE" -r "$RESIZE_FILTER" --prefer "$CHOSEN_PREF")&
+(matugen image "$FULL_PATH" -t "$MATUGEN_TYPE" -r "$RESIZE_FILTER" --prefer "$PREFER" -m "$MODE" --source-color-index "$CHOICE")&
 
 #6.. Create a miniature background for the NEXT time Rofi opens
 #(magick "$FULL_PATH" -resize 800x450^ -gravity center  -crop 800x450+0+0  -blur 0x12  -fill black -colorize 20%  "$ROFI_BG") &

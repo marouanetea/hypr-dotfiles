@@ -17,7 +17,7 @@ local general = {
 
 	-- List of menus
 	menu           = "rofi -show drun -config main.rasi",
-	wallpaperMenu  = "~/.config/rofi/modes/wallpaper-menu.sh",
+	wallpaperMenu  = "~/.config/scripts/wall_color_picker.sh",
 	powerMenu      = "rofi -show power -config power.rasi",
 	socialMenu     = "rofi -show social -config social.rasi",
 	cliphistMenu   = "cliphist list | rofi -dmenu -config cliphist.rasi -display-columns 2 -sep '\n'  | cliphist decode | wl-copy",

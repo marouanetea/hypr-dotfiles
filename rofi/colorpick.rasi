@@ -16,7 +16,7 @@ configuration {
 /** ===== Main Window ===== **/
 window {
     height: 100px;
-    width: 391px;
+    width: 317px;
 }
 
 /** ==== Main Box ==== **/

@@ -57,3 +57,33 @@ hl.window_rule({
   render_unfocused = true,
   max_size = {1280, 720},
 })
+
+-- For only office popups
+hl.window_rule({
+  match = { class = "DesktopEditors" },
+  center = true,
+})
+
+-- For overskride (bluetooth)
+hl.window_rule({
+  match = { class = "io.github.kaii_lb.Overskride" },
+  float = true,
+  size = { "1000", "800" },
+  center = true
+})
+
+-- For nmgui (wifi)
+hl.window_rule({
+  match = { class = "com.network.manager" },
+  float = true,
+  size = { "600", "600" },
+  center = true
+})
+
+-- For floating windows, if you can set up the class
+hl.window_rule({
+  match = { class = "floating" },
+  opacity = "1.0 override 1.0 override 1.0 override",
+  float = true,
+  render_unfocused = true,
+})

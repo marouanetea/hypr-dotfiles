@@ -9,7 +9,9 @@
 #clock,
 #language,
 #custom-power-profiles,
-#custom-swaync
+#custom-swaync,
+#custom-overskride,
+#custom-nmgui
 {
     padding: 5px 5px;
     margin:  2px 2px;
@@ -23,7 +25,9 @@
 #pulseaudio:hover,
 #language:hover,
 #custom-power-profiles:hover,
-#custom-swaync:hover
+#custom-swaync:hover,
+#custom-overskride:hover,
+#custom-nmgui:hover
 {
     background-color : @primary_container;
 }
@@ -36,7 +40,10 @@
 }
 
 #custom-power-profiles,
-#custom-swaync{
+#custom-swaync,
+#custom-overskride,
+#custom-nmgui
+{
     min-width: 20px;
 }
 
