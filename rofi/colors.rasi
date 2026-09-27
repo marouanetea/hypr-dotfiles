@@ -46,12 +46,12 @@
 	surface-container-highest: #323740;
 
 	/** ==== Transparent surfaces ==== **/
-	surface-transparent: #0e141ccc;
-	surface-dim-transparent: #0e141ccc;
-	surface-bright-transparent: #363c45cc;
-	surface-container-lowest-transparent: #080d15cc;
-	surface-container-low-transparent: #171c25cc;
-	surface-container-transparent: #1c212acc;
-	surface-container-high-transparent: #272c35cc;
-	surface-container-highest-transparent: #323740cc;
+	surface-transparent: #0e141c70;
+	surface-dim-transparent: #0e141c70;
+	surface-bright-transparent: #363c4570;
+	surface-container-lowest-transparent: #080d1570;
+	surface-container-low-transparent: #171c2570;
+	surface-container-transparent: #1c212a70;
+	surface-container-high-transparent: #272c3570;
+	surface-container-highest-transparent: #32374070;
 }

@@ -32,9 +32,9 @@ hl.config(
 			passes = 3,
 			new_optimizations = true,
 			ignore_opacity = true,
-			contrast = 1.5,
-			noise = 0.02,
-			brightness = 0.9,
+			contrast = 2.0,
+			noise = 0.0,
+			brightness = 1.5,
 		},
 
 		shadow = {
