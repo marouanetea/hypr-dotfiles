@@ -33,15 +33,15 @@
 
 /*Main transparency setting*/
 window.background {
-  background-color: {{colors.surface.default.hex}}c4;
+  background-color: {{colors.surface.default.hex}}e6;
 }
 
 /*Make headbar when its inactive the same color*/
 headerbar:backdrop {
   background-color: @headerbar_bg_color;
 }
-
 /*Makes revealer (aka shadow over inactive header) transparent*/
 revealer{
   background-color: #00000000;
 }
+  

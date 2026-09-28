@@ -20,8 +20,8 @@ window#waybar {
 .modules-left,
 .modules-center,
 .modules-right {
-    background-color: @surface;
-    opacity: 0.8;
+    background-color: alpha(@surface, 0.8);
+    opacity: 1.0;
     border: 0px solid transparent;
     margin: 3px 3px 2px 3px;
     padding: 0px

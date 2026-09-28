@@ -1,6 +1,5 @@
 #custom-power {
     color: @secondary;
-    background-color: @on_secondary; 
     border-radius : 0px 0px 15px 0px;
     padding: 0px 12px;
     margin: 0px;

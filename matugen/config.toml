@@ -39,11 +39,11 @@
 	post_hook="pkill -SIGUSR2 waybar"
 
 [templates.gtk3]
-	input_path = '~/.config/matugen/templates/gtk-colors.css'
+	input_path = '~/.config/matugen/templates/gtk3-colors.css'
 	output_path = '~/.config/gtk-3.0/gtk.css'
 
 [templates.gtk4]
-	input_path = '~/.config/matugen/templates/gtk-colors.css'
+	input_path = '~/.config/matugen/templates/gtk4-colors.css'
 	output_path = '~/.config/gtk-4.0/gtk.css'
 
 [templates.papirus_folders]

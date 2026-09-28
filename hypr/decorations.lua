@@ -22,8 +22,8 @@ hl.config(
 		rounding = 10,
 
 		-- Opacity settings
-		active_opacity = 0.9,       -- Opacity for the focused window
-		inactive_opacity = 0.8,     -- Opacity for unfocused windows
+		active_opacity = 1.0,       -- Opacity for the focused window
+		inactive_opacity = 0.9,     -- Opacity for unfocused windows
 		fullscreen_opacity = 1.0,   -- Opacity for fullscreen windows
 
 		blur = {
