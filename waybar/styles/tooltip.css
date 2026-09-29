@@ -1,0 +1,11 @@
+tooltip {
+    background-color: @surface_container_highest;
+    border: 1px solid @primary;
+    border-radius: 8px;
+}
+
+tooltip label {
+    color: @on_surface_container_highest;
+    font-size: 14px;
+    text-shadow: none;
+}

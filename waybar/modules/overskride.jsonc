@@ -4,6 +4,8 @@
 		"format": "",
 		"on-click": "overskride",
 		"on-click-right": "overskride",
-		"escape": true
+		"escape": true,
+		"tooltip": true,
+		"tooltip-format": "Bluetooth : overskride",
 	},
 }

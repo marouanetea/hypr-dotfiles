@@ -18,6 +18,16 @@ button.active:hover{
     color: @primary;
 }
 
+#workspaces button:hover{
+    background-color: transparent;
+    color: @on_surface;
+}
+
+#workspaces button.active:hover{
+    background-color: transparent;
+    color: @primary;
+}
+
 /* If an app is minimized (optional state style) */
 button.minimized {
     opacity: 0.5;

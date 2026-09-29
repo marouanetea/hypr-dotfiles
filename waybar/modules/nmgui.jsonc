@@ -4,6 +4,8 @@
 		"format": " ",
 		"on-click": "pgrep nmgui || nmgui",
 		"on-click-right": "pgrep nmgui || nmgui",
-		"escape": true
+		"escape": true,
+		"tooltip": true,
+		"tooltip-format": "Wifi : nmgui",
 	},
 }

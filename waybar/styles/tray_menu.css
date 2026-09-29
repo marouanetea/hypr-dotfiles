@@ -28,7 +28,7 @@ menu menuitem:disabled {
 /* GTK separator lines  */
 menu separator {
     background-color: @surface_container; /* Line color */
-    min-height: 1px;           /* Thickness of the line */
+    min-height: 0px;           /* Thickness of the line */
     margin: 6px 4px;           /* Spacing: top/bottom and left/right */
 }
 

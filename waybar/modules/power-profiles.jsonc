@@ -6,7 +6,8 @@
         "exec": "$HOME/.config/waybar/scripts/power-profiles.sh",
         "interval": "once",
         "signal": 10,
-        "tooltip": false,
+        "tooltip": true,
+        "tooltip-format": "Power profiles menu",
         "menu": "on-click", 
         "menu-file": "$HOME/.config/waybar/menus/power-profiles-menu.xml",
         "menu-actions": {
