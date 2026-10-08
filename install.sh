@@ -62,6 +62,7 @@ link_config "wallpapers"
 link_config "scripts"
 link_config "swaync"
 link_config "fastfetch"
+link_config "quickshell"
 
 echo ""
 echo "Done! Your Hyprland environment is now linked."

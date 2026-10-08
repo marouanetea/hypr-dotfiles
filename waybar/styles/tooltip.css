@@ -6,6 +6,5 @@ tooltip {
 
 tooltip label {
     color: @on_surface_container_highest;
-    font-size: 14px;
     text-shadow: none;
 }
