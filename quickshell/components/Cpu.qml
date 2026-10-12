@@ -24,5 +24,5 @@ Text {
         return Colors.blue;
     }
 
-    text: "  " + cpuService.usage + "%"
+    text: "   " + cpuService.usage + "%"
 }

@@ -27,7 +27,7 @@ QtObject {
     }
 
     property Timer pollTimer: Timer {
-        interval: config.timerInterval
+        interval: Config.timerInterval
         running: true
         repeat: true
         onTriggered: root.batteryProc.running = true

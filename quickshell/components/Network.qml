@@ -24,10 +24,10 @@ Text {
     }
 
     function getNetworkIcon() {
-        if (netService.connectionType === "wifi") return "󰤨";
+        if (netService.connectionType === "wifi") return "󰖩";
         if (netService.connectionType === "ethernet") return "󰈀";
-        return "󰤭"; // Disconnected
+        return "󰖪"; // Disconnected
     }
 
-    text: getNetworkIcon() + "  󰇚 " + formatSpeed(netService.downloadBytes) + "  󰕒 " + formatSpeed(netService.uploadBytes)
+    text: getNetworkIcon() + "   󰇚 " + formatSpeed(netService.downloadBytes) + "   󰕒 " + formatSpeed(netService.uploadBytes)
 }

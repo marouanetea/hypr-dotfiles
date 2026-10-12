@@ -24,5 +24,5 @@ Text {
         return Colors.blue;
     }
 
-    text: "󰍛  " + ramService.usagePercent + "%"
+    text: "   " + ramService.usagePercent + "%"
 }

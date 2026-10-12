@@ -1,31 +1,34 @@
 
 import QtQuick
+import "../config" 
 
-Rectangle {
+
+MyRectangle {
     id: root
 
     color: "#2e3440"
     border.color: "#4c566a"
     border.width: 0
 
-    property real radiusTopLeft: 0
-    property real radiusTopRight: 0
-    property real radiusBottomLeft: 0
-    property real radiusBottomRight: 0
+    property real radiusTopLeft: Config.defaultRadius
+    property real radiusTopRight: Config.defaultRadius
+    property real radiusBottomLeft: Config.defaultRadius
+    property real radiusBottomRight: Config.defaultRadius
 
     topLeftRadius: root.radiusTopLeft
     topRightRadius: root.radiusTopRight
     bottomLeftRadius: root.radiusBottomLeft
     bottomRightRadius: root.radiusBottomRight
 
-    property real horizontalPadding: 12
-    property real verticalPadding: 6
+    property real horizontalPadding: Config.cardPadding
+    property real verticalPadding: Config.cardPadding
 
     // Dynamic sizing based on the children inside the content container
     implicitWidth: contentLayout.implicitWidth + (horizontalPadding * 2)
     implicitHeight: contentLayout.implicitHeight + (verticalPadding * 2)
 
     default property alias content: contentLayout.data
+    property alias rootChildren: root.data
 
     // Use a standard Item so children can be positioned freely (Rows, Columns,anchors, etc.)
     Item {
@@ -38,7 +41,7 @@ Rectangle {
         // Dynamically compute implicit width and height based on all child items
         implicitWidth: {
             let maxW = 0
-            for (let i = 0; i < children.length; ++i) {
+            for (let i = 0; i < children.length; i++) {
                 let child = children[i]
                 let rightEdge = child.x + (child.width > 0 ? child.width : child.implicitWidth)
                 if (rightEdge > maxW) maxW = rightEdge
@@ -48,7 +51,7 @@ Rectangle {
 
         implicitHeight: {
             let maxH = 0
-            for (let i = 0; i < children.length; ++i) {
+            for (let i = 0; i < children.length; i++) {
                 let child = children[i]
                 let bottomEdge = child.y + (child.height > 0 ? child.height : child.implicitHeight)
                 if (bottomEdge > maxH) maxH = bottomEdge

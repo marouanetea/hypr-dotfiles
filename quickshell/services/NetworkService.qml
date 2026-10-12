@@ -1,5 +1,6 @@
 import QtQuick
 import Quickshell.Io
+import "../config"
 
 QtObject {
     id: root
@@ -70,7 +71,7 @@ QtObject {
     }
 
     property Timer pollTimer: Timer {
-        interval: 2000
+        interval: Config.timerInterval
         running: true
         repeat: true
         onTriggered: root.netProc.running = true

@@ -13,7 +13,7 @@ Text {
     anchors.verticalCenter: parent.verticalCenter
 
     //fixed width
-    width: Config.barWidthUnit 
+    width: Config.barWidthUnit
     horizontalAlignment: Text.AlignHCenter
 
     color: {
@@ -24,12 +24,15 @@ Text {
         return Colors.blue;
     }
 
-    text: getBatteryIcon() + "  " + batteryService.capacity + "%"
-
-    function getBatteryIcon() {
-        if (batteryService.status === "Charging" || batteryService.status === "Full") {
-            return "󰂄";
+    text: getChargingIcon() + " " + getBatteryIcon() + " " + batteryService.capacity + "%"
+    function getChargingIcon(){
+        if (batteryService.status === "Charging") {
+            return "󰚥";
         }
+        return "󰚦 "
+    }
+    function getBatteryIcon() {
+        
         
         if (batteryService.capacity >= 90) return "󰁹";
         if (batteryService.capacity >= 80) return "󰂂";

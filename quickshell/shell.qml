@@ -1,7 +1,9 @@
-// ~/.config/quickshell/shell.qml
+//@ pragma IconTheme Papirus
+
 import QtQuick
 import Quickshell
 import "bar" // Import the bar directory so QML can see Bar.qml
+
 
 ShellRoot {
     // Instantiate your modular bar
@@ -9,7 +11,7 @@ ShellRoot {
 
     Scope {
         id: mainScope
-        //TODO : replace with a loader later
+        //TODO : replace with a loader later, with variants and such
         Bar {}
 
     }
