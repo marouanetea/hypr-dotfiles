@@ -99,7 +99,7 @@ Row {
                     id: wsIndicator
                     color : {
                         if (workspace.isActive) return Colors.accent;
-                        return Colors.accent_fg_primary;
+                        return Qt.alpha(Colors.accent,0.2);
                     }
                     height: Config.wsIndicatorHeight
                     width: workspaceIcons.width

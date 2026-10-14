@@ -16,6 +16,8 @@ QtObject {
         property int itemSpacing: 8
         property int generalPadding: 6
         property int scrollUnitIncrement: 5
+        property int barMargin : 4
+        property real barAlpha : 0.8
 
         //button
         property int buttonPadding: 4

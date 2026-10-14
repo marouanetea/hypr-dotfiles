@@ -19,12 +19,18 @@ PanelWindow {
         right: true
     }
 
+    margins {
+        top : Config.barMargin
+        left : Config.barMargin
+        right : Config.barMargin
+        bottom : Config.barMargin
+    }
+
     color: "transparent"
 
     // Use a plain Item container for absolute left, center, and right anchoring
     Item {
         anchors.fill: parent
-        anchors.margins: 4
 
         // --- Left Widget (Stats Leaf) ---
         Card {
@@ -35,7 +41,7 @@ PanelWindow {
             radiusTopRight: 8
             radiusBottomLeft: 8
             radiusBottomRight: 0
-            color: Colors.window_bg
+            color: Qt.alpha(Colors.window_bg, Config.barAlpha)
 
             Row {
                 height: root.height - Config.cardPadding*2
@@ -57,7 +63,7 @@ PanelWindow {
             radiusTopRight: 8
             radiusBottomLeft: 8
             radiusBottomRight: 8
-            color: Colors.window_bg
+            color: Qt.alpha(Colors.window_bg, Config.barAlpha)
 
             Row {
                 height: root.height - Config.cardPadding*2
@@ -74,7 +80,7 @@ PanelWindow {
             radiusTopRight: 8
             radiusBottomLeft: 8
             radiusBottomRight: 8
-            color: Colors.window_bg
+            color: Qt.alpha(Colors.window_bg, Config.barAlpha)
 
             Row {
                 height: root.height - Config.cardPadding*2
