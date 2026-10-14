@@ -51,11 +51,7 @@ Row {
                     }
                     Repeater {
                     // for every icon within the workspace
-                        model: {
-                            console.log("repeater updated for workspace " + wsId)
-                            console.log("         number of windows is : " + hyprService.windowsForWorkspace(wsId).length)
-                            return hyprService.windowsForWorkspace(wsId);
-                        }
+                        model: hyprService.windowsForWorkspace(wsId)
 
                         delegate: Button {
                             id: appIconButton

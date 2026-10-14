@@ -66,13 +66,28 @@ PanelWindow {
             }
         }
 
-        // --- Right Widget (Optional: e.g., Clock or Controls) ---
-        /*
         Card {
             anchors.right: parent.right
             anchors.verticalCenter: parent.verticalCenter
-            // ...
+
+            radiusTopLeft: 8
+            radiusTopRight: 8
+            radiusBottomLeft: 8
+            radiusBottomRight: 8
+            color: Colors.window_bg
+
+            Row {
+                height: root.height - Config.cardPadding*2
+                spacing: 6
+                Brightness {}
+                Audio{}
+                KeyboardLayout{}
+                Bluetooth{}
+                Wifi{}
+                SwayNC{}
+                Clock{}
+            }
         }
-        */
+
     }
 }

@@ -1,25 +1,60 @@
 import QtQuick
+import "../config"
 
 Card {
     id: root
 
-    // Custom signals and properties for button behavior
+    // Custom signals for expanded mouse functionality
     signal clicked()
+    signal rightClicked()
+    signal scrollUp()
+    signal scrollDown()
 
-    property color normalColor: "#2e3440"
-    property color hoverColor: "#3b4252"
+    border.width: 0
 
-    // Bind background color to mouse state
+    property color normalColor: "transparent"
+    property color hoverColor: Colors.accent_bg_primary
+
+    property color normalTextColor: Colors.window_fg
+    property color hoverTextColor: Colors.accent_fg_primary
+
+    property color normalBorderColor: Colors.window_fg
+    property color hoverBorderColor: Colors.accent_fg_primary
+
+    // Bind colors to mouse state
     color: mouseArea.containsMouse ? hoverColor : normalColor
+    border.color: mouseArea.containsMouse ? hoverBorderColor : normalBorderColor
+    property color textColor: mouseArea.containsMouse ? hoverTextColor : normalTextColor
 
-    // Optional: change cursor to pointer on hover
-    //cursorShape: Qt.PointingHandCursor
+    // Padding
+    horizontalPadding: Config.buttonPadding
+    verticalPadding: Config.buttonPadding
+
     rootChildren: [
-            MouseArea {
-                id: mouseArea
-                anchors.fill: parent
-                hoverEnabled: true
-                onClicked: root.clicked()
+        MouseArea {
+            id: mouseArea
+            anchors.fill: parent
+            hoverEnabled: true
+            
+            // Listen for both Left and Right mouse clicks
+            acceptedButtons: Qt.LeftButton | Qt.RightButton
+
+            onClicked: event => {
+                if (event.button === Qt.RightButton) {
+                    root.rightClicked();
+                } else {
+                    root.clicked();
+                }
             }
+
+            // Handle vertical scroll wheel movements
+            onWheel: wheel => {
+                if (wheel.angleDelta.y > 0) {
+                    root.scrollUp();
+                } else if (wheel.angleDelta.y < 0) {
+                    root.scrollDown();
+                }
+            }
+        }
     ]
 }

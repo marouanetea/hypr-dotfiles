@@ -1,4 +1,3 @@
-
 import QtQuick
 import "../config" 
 
@@ -6,22 +5,22 @@ import "../config"
 MyRectangle {
     id: root
 
-    color: "#2e3440"
-    border.color: "#4c566a"
+    color: Colors.window_bg
+    border.color: Colors.accent
     border.width: 0
 
-    property real radiusTopLeft: Config.defaultRadius
-    property real radiusTopRight: Config.defaultRadius
-    property real radiusBottomLeft: Config.defaultRadius
-    property real radiusBottomRight: Config.defaultRadius
+    property int radiusTopLeft: Config.defaultRadius
+    property int radiusTopRight: Config.defaultRadius
+    property int radiusBottomLeft: Config.defaultRadius
+    property int radiusBottomRight: Config.defaultRadius
 
     topLeftRadius: root.radiusTopLeft
     topRightRadius: root.radiusTopRight
     bottomLeftRadius: root.radiusBottomLeft
     bottomRightRadius: root.radiusBottomRight
 
-    property real horizontalPadding: Config.cardPadding
-    property real verticalPadding: Config.cardPadding
+    property int horizontalPadding: Config.cardPadding
+    property int verticalPadding: Config.cardPadding
 
     // Dynamic sizing based on the children inside the content container
     implicitWidth: contentLayout.implicitWidth + (horizontalPadding * 2)

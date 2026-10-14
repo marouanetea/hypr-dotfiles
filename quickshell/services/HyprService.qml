@@ -29,7 +29,6 @@ QtObject {
     function classForWindow(window: HyprlandToplevel): string{
        // If you are targeting a specific HyprlandToplevel object (e.g., named toplevelData)
         if (window.lastIpcObject.class === undefined || window.lastIpcObject.class === null) {
-            console.log("found null class, updating...");
             Hyprland.refreshToplevels();
             Hyprland.refreshWorkspaces();
         }
@@ -57,5 +56,4 @@ QtObject {
     function focusWindow(window: HyprlandToplevel){
         Hyprland.dispatch("hl.dsp.focus({ window = 'address:0x" + window.address + "' })");
     }
-
 }
