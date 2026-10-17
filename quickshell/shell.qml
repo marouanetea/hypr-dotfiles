@@ -3,7 +3,7 @@
 import QtQuick
 import Quickshell
 import Quickshell.Wayland
-import "bar" // Import the bar directory so QML can see Bar.qml
+import "ShellComponents"
 
 ShellRoot {
     id: root
@@ -19,8 +19,12 @@ ShellRoot {
             // Pass the screen context to your bar if needed, 
             // or instantiate it directly per screen variant:
             Bar {
-                screen: barScope.modelData // Uncomment if your Bar accepts a screen property
+                screen: barScope.modelData
+                onLaunchClicked: { launcher.toggle();}
             }
         }
+    }
+    Launcher {
+        id: launcher
     }
 }

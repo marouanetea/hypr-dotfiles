@@ -9,15 +9,20 @@ QtObject {
     property real lineHeight: 0.7
 
     // Spacings & Layout
+        //card defaults
+        property int cardPadding: 10
+
         // bar : 
         property int barWidthUnit: 60
         property int barHeight: 40
-        property int cardPadding: 10
-        property int itemSpacing: 8
+        property int barHorizontalPadding: 12
+        property int barVerticalPadding: 4
+        property int itemSpacing: 4
         property int generalPadding: 6
         property int scrollUnitIncrement: 5
         property int barMargin : 4
         property real barAlpha : 0.8
+        property int barRadius : 15
 
         //button
         property int buttonPadding: 4

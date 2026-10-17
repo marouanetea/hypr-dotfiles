@@ -1,8 +1,8 @@
 import QtQuick
 import "../config" 
 
-
 MyRectangle {
+
     id: root
 
     color: Colors.window_bg

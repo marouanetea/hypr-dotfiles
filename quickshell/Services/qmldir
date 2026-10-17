@@ -1,0 +1,12 @@
+module MyShell.Services
+
+singleton AudioService AudioService.qml
+singleton BatteryService BatteryService.qml
+singleton BrightnessService BrightnessService.qml
+singleton CpuService CpuService.qml
+singleton HyprConnectionsService HyprConnectionsService.qml
+singleton HyprService HyprService.qml
+singleton KeyboardLayoutService KeyboardLayoutService.qml
+singleton NetworkService NetworkService.qml
+singleton RamService RamService.qml
+singleton TempService TempService.qml

@@ -1,0 +1,6 @@
+module BarComponents
+
+Workspace Workspace.qml
+LauncherButton LauncherButton.qml
+SystemStats SystemStats.qml
+SystemControls SystemControls.qml

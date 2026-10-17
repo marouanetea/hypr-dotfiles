@@ -3,9 +3,9 @@
 -- =========================================================================
 
 local colors = {
-	primary_col = "0xff8fcef3",
-	secondary_col = "0xffb5c9d7",
-	background_col  = "0xff0f1417"
+	primary_col = "0xffdcb9f8",
+	secondary_col = "0xffd1c1d9",
+	background_col  = "0xff151217"
 }
 
 return colors

@@ -1,3 +1,5 @@
+pragma Singleton
+
 import QtQuick
 import Quickshell.Io
 import "../config"

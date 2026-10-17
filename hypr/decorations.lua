@@ -31,7 +31,7 @@ hl.config(
 			size = 7,
 			passes = 3,
 			new_optimizations = true,
-			ignore_opacity = true,
+			ignore_opacity = false,
 			contrast = 2.0,
 			noise = 0.0,
 			brightness = 1.5,

@@ -1,0 +1,4 @@
+module MyShell.ShellComponents
+
+Bar Bar.qml
+Launcher Launcher.qml

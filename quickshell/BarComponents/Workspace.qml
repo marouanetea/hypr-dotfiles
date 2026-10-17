@@ -2,28 +2,23 @@ import QtQuick
 import Quickshell
 import Quickshell
 
-import "../services"
+import "../Services"
 import "../config"
 import "../widgets"
 
 Row {
     id: root
 
-    HyprService {
-        id: hyprService
-    }
-
     spacing: Config.hSpacing
-    anchors.verticalCenter: parent.verticalCenter
 
     Repeater {
         // For every workspace
-        model: hyprService.workspacesCount
+        model: HyprService.workspacesCount
         Card {
             id: workspace
             required property int index
             property int wsId: index + 1
-            property bool isActive: hyprService.activeWorkspaceId === wsId
+            property bool isActive: HyprService.activeWorkspaceId === wsId
             color: "transparent"
             horizontalPadding: 0
             verticalPadding: 0
@@ -37,7 +32,7 @@ Row {
                         id: emptyPlaceHolder
                         normalColor: "transparent"
                         hoverColor: "transparent"
-                        visible : hyprService.windowsForWorkspace(wsId).length === 0
+                        visible : HyprService.windowsForWorkspace(wsId).length === 0
                         horizontalPadding : 0
                         verticalPadding : Config.appIconButtonPadding
                         Rectangle{
@@ -46,30 +41,33 @@ Row {
                             color: "transparent"
                         }
                         onClicked: {
-                            hyprService.focusWorkspace(wsId);
+                            HyprService.focusWorkspace(wsId);
                         }
                     }
                     Repeater {
                     // for every icon within the workspace
-                        model: hyprService.windowsForWorkspace(wsId)
+                        model: HyprService.windowsForWorkspace(wsId)
 
-                        delegate: Button {
+                        delegate: MyImageButton {
                             id: appIconButton
+
                             required property var modelData
-                            property bool isActive: hyprService.isActiveWindow(modelData)
+                            property bool isActive: HyprService.isActiveWindow(modelData)
+
                             normalColor:  isActive ? Colors.accent : "transparent"
                             hoverColor: isActive ? Colors.accent : Colors.accent_fg_primary
 
                             horizontalPadding : Config.appIconButtonPadding
                             verticalPadding : Config.appIconButtonPadding
 
-                            radiusTopLeft: Config.appIconButtonBorderRadis
-                            radiusTopRight: Config.appIconButtonBorderRadis
-                            radiusBottomLeft: Config.appIconButtonBorderRadis
-                            radiusBottomRight: Config.appIconButtonBorderRadis
+                            width : 28
+                            height : 28
 
                             property int retryTick: 0
-                            Timer {
+
+                            imageSource : "image://icon/" + appIcon
+
+                            property Timer retryTimer : Timer{
                                 id: appIconLookup
                                 interval : 100
                                 running : true
@@ -81,16 +79,10 @@ Row {
                             
                             property string appIcon: {
                                 let __ = retryTick;
-                                return hyprService.iconForWindow(modelData);
-                            }
-                            Image {
-                                width : Config.appIconSize
-                                height : Config.appIconSize
-                                source: "image://icon/" + appIcon
-                                fillMode: Image.PreserveAspectFit
+                                return HyprService.iconForWindow(modelData);
                             }
                             onClicked: {
-                                hyprService.focusWindow(modelData);
+                                HyprService.focusWindow(modelData);
                             }
                         }
                     }

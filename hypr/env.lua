@@ -2,6 +2,9 @@
 -- Environment Variables
 -- =========================================================================
 
+
+-- Disable GTK side blur, to let Hyprland manage it
+hl.env("GDK_WAYLAND_DISABLE", "ext_background_effect_manager_v1")
 -- Force hyprland as the current desktop, because of GDM forcing it to be gnome
 hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
 hl.env("XDG_SESSION_TYPE", "wayland")

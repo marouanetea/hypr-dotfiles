@@ -4,8 +4,8 @@
 
 hl.on("hyprland.start", function ()
 
-	-- Update the DBus and systemd activation environments
-	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=GNOME")
+	-- Update the DBus and systemd environment variables
+	hl.exec_cmd("dbus-update-activation-environment --systemd --all")
 
 	-- Startup applications & system tray daemons
 	hl.exec_cmd("awww-daemon")

@@ -2,6 +2,7 @@
 import QtQuick
 import "../config" 
 
+// Overloads <Rectangle> to make all animations go here
 
 Rectangle{
     id:rectRoot
