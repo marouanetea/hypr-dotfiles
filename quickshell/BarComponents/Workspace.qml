@@ -72,7 +72,7 @@ MyCard {
                 PropertyAction { target: workspace; property: "ListView.delayRemove"; value: false }
             }
             property SequentialAnimation addAnimation : SequentialAnimation {
-                NumberAnimation { target: workspace; property: "width"; from : 0; to : workspace.implicitWidth; duration: 300; easing.type: Easing.Linear }
+                NumberAnimation { target: workspace; property: "animationWidthScale"; from : 0; to : 1; duration: 300; easing.type: Easing.Linear }
             }
             ListView.onRemove: removeAnimation.start()
             ListView.onAdd : addAnimation.start()
@@ -84,7 +84,8 @@ MyCard {
             horizontalPadding: Config.ws_hSpacing
             verticalPadding: Config.workspacePaddin
             //automatic growth on width, fixed on height
-            implicitWidth:  content.implicitWidth + (horizontalPadding * 2)
+            property real animationWidthScale : 1
+            implicitWidth:  (content.implicitWidth + (horizontalPadding * 2)) * animationWidthScale
             implicitHeight: root.height
 
             //Icons
