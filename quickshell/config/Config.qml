@@ -26,20 +26,24 @@ QtObject {
 
         //button
         property int buttonPadding: 4
+
         //workspaces
-        property int vSpacing : 4
-        property int hSpacing : 8
+        property int ws_hSpacing : 6
+        property int ws_vSpacing : 2
         property int appIconButtonPadding : 2
-        property int appIconButtonBorderRadis : 40
-        property int appIconSize : 24
+        property int workspacePaddin : 2
+        property int appIconButtonBorderRadius : 40
         property int wsIndicatorHeight : 2
+        property int wsIndicatorWidth : 2
+        property int wsEmptyWidth : 8
+        property int wsScrollAnimationDuration : 300
 
 
 
     // Radii
     property int defaultRadius: 8
 
-    //process
+    //process 
     property int timerInterval: 1000
 
     //icons
@@ -48,5 +52,4 @@ QtObject {
     //animations:
     property int colorAnimDuration: 150
     property var colorAnimType: Easing.OutQuad
-
 }

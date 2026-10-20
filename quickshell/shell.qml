@@ -24,7 +24,7 @@ ShellRoot {
             }
         }
     }
-    Launcher {
+    /*Launcher {
         id: launcher
-    }
+    }*/
 }

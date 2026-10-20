@@ -44,9 +44,9 @@ hl.bind("CTRL + DELETE", hl.dsp.exec_cmd("[float; center; size 1000 700] gnome-s
 -- =========================================================================
 
 -- Loops through keycodes 10 (Key 1) to 19 (Key 0)
-for i = 1, 9 do
+for i = 0, 9 do
 	local keycode = 10 + i
-	local workspace = { workspace = tostring(i) }
+	local workspace = { workspace = tostring(i+1) }
 
   hl.bind(general.mainMod .. " + code:" .. keycode, hl.dsp.focus(workspace))
 

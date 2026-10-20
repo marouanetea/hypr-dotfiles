@@ -1,16 +1,16 @@
 import QtQuick
 import "../config"
 
-MyRectangle {
+Rectangle {
     id: root
 
     property alias text: input.text
     property alias placeholderText: placeholder.text
 
     //color
-    color: Colors.popover_bg
+    color: "red"
     border.color: input.activeFocus ? Colors.accent_bg_primary : Colors.accent_fg_primary
-    border.width: 1.5
+    border.width: 1
     
     //radius
     topLeftRadius: Config.defaultRadius
@@ -43,7 +43,7 @@ MyRectangle {
             anchors.fill: parent
             verticalAlignment: Text.AlignVCenter
             color: Colors.accent_bg_tertiary
-            font.pixelSize: parent.pixelSize
+            font.pixelSize: parent.font.pixelSize
             visible: !input.text && !input.activeFocus
             elide: Text.ElideRight
             text: "placeholder sample text"

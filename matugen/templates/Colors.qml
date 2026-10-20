@@ -20,8 +20,8 @@ QtObject {
 	property color window_bg:     "{{colors.surface.default.hex}}"
 	property color window_fg:     "{{colors.on_surface.default.hex}}"
 
+	property color popover_bg_dim:    "{{colors.surface_dim.default.hex}}"
 	property color popover_bg:    "{{colors.surface_container.default.hex}}"
-	property color popover_fg:    "{{colors.on_surface.default.hex}}"
 
 // Reglar colors
 	property color red:     "{{ colors.red.default.hex }}"

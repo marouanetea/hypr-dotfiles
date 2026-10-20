@@ -2,7 +2,7 @@ import QtQuick
 import Quickshell
 import "../widgets"
 
-Card{
+MyCard{
     id: root
 
     Column{

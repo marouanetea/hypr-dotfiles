@@ -4,7 +4,7 @@ import "../config"
 
 // A simple card with inner padding
 
-MyRectangle {
+Rectangle {
 
     id: root
 

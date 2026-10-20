@@ -55,7 +55,7 @@ PanelWindow {
         horizontalPadding: Config.barHorizontalPadding
         verticalPadding: Config.barVerticalPadding
 
-        width : 450
+        width : 400 
         height : parent.height
         
         Workspace {} // Make sure this matches your component file name

@@ -9,7 +9,7 @@ hl.on("hyprland.start", function ()
 
 	-- Startup applications & system tray daemons
 	hl.exec_cmd("awww-daemon")
-	hl.exec_cmd("quickshell")
+--	hl.exec_cmd("quickshell")
 	hl.exec_cmd("swaync")
 	hl.exec_cmd("swayosd-server")
 	hl.exec_cmd("hypridle")
