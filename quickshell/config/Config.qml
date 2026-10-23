@@ -38,6 +38,9 @@ QtObject {
         property int wsEmptyWidth : 8
         property int wsScrollAnimationDuration : 300
 
+        property int wsHighlightMarginV : 0
+        property int wsHighlightMarginH : 0
+
 
 
     // Radii

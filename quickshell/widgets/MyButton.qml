@@ -9,6 +9,8 @@ MyCard {
     signal rightClicked()
     signal scrollUp()
     signal scrollDown()
+    signal mouseEntered()
+    signal mouseExited()
 
     border.width: 0
 
@@ -20,6 +22,8 @@ MyCard {
 
     property color normalBorderColor: Colors.window_fg
     property color hoverBorderColor: Colors.accent_fg_primary
+
+    readonly property bool hovered : mouseArea.containsMouse
 
     // Bind colors to mouse state
     color: mouseArea.containsMouse ? hoverColor : normalColor
@@ -53,6 +57,13 @@ MyCard {
                 } else if (wheel.angleDelta.y < 0) {
                     root.scrollDown();
                 }
+            }
+            onEntered: {
+                root.mouseEntered();
+            }
+
+            onExited: {
+                root.mouseExited();
             }
         }
     ]

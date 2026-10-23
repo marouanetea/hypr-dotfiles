@@ -6,31 +6,31 @@ import QtQuick
 
 QtObject {
 // UI colors
-    property color accent:              "#ffaaf5"
+    property color accent:              "#aec6ff"
 
-	property color accent_fg_primary:   "#580059"
-	property color accent_bg_primary:   "#ffaaf5"
+	property color accent_fg_primary:   "#102d5e"
+	property color accent_bg_primary:   "#aec6ff"
 
-	property color accent_fg_secondary: "#452438"
-	property color accent_bg_secondary: "#e9b9d2"
+	property color accent_fg_secondary: "#272f40"
+	property color accent_bg_secondary: "#bfc6dc"
 
-	property color accent_fg_tertiary:  "#4f1e31"
-	property color accent_bg_tertiary:  "#fcb2c9"
+	property color accent_fg_tertiary:  "#3f2641"
+	property color accent_bg_tertiary:  "#dfbbde"
 
-	property color window_bg:     "#1a1018"
-	property color window_fg:     "#f0dde9"
+	property color window_bg:     "#121318"
+	property color window_fg:     "#e2e2e9"
 
-	property color popover_bg_dim:    "#1a1018"
-	property color popover_bg:    "#281e26"
+	property color popover_bg_dim:    "#121318"
+	property color popover_bg:    "#1f2126"
 
 // Reglar colors
 	property color red:     "#ffb2b9"
 	property color orange:  "#ffb59c"
-	property color yellow:  "#ebc300"
-	property color green:   "#9fd800"
-	property color cyan:    "#00daf4"
-	property color blue:    "#cebdff"
-	property color magenta: "#ffaaf4"
-	property color purple:  "#ffaaf4"
+	property color yellow:  "#b8cf84"
+	property color green:   "#95d5a7"
+	property color cyan:    "#82d3e2"
+	property color blue:    "#b7c4ff"
+	property color magenta: "#e4b7f3"
+	property color purple:  "#e4b7f3"
 
 }

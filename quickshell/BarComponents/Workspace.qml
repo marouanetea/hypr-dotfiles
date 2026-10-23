@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
+import Quickshell.Widgets
 
 import "../Services"
 import "../config"
@@ -13,70 +14,39 @@ MyCard {
     verticalPadding: 0
     anchors.fill: parent
     ListView {
-        id: listView
+        id: mainListView
+        //positioning
         anchors.fill: parent
         orientation: ListView.Horizontal
         clip: true
         spacing: 0 //set to 0 to make animations smooth
+        leftMargin : Math.max((width - contentWidth) / 2 , 0 )
+
         boundsBehavior: Flickable.StopAtBounds
 
-        //smart right margin to keep it centered
-        leftMargin : (width - contentWidth) / 2
+        //Active workspace selection
+        currentIndex: {
+            for (let i = 0; i < model.count; i++)
+                if (model.get(i).wsId === HyprService.activeWorkspaceId) return i;
+            return -1; // Fallback if none are active
+        }
 
         //highlight for selected workspace
         highlight : Rectangle {
-            color: "transparent";
-            Rectangle {
-                id: bottomBorder
-                height: 2 // thickness of the line
-                color: Colors.accent // your accent or border color
-                anchors.left: parent.left
-                anchors.right: parent.right
-                anchors.bottom: parent.bottom
-            }
+            color: Colors.accent_bg_primary
+            radius : 5
         }
-        highlightMoveVelocity : 350
-        highlightResizeVelocity : 300
+        highlightMoveDuration : 300
+        highlightMoveVelocity : -1
+        highlightResizeDuration : 300
+        highlightResizeVelocity : -1
 
-        function selectWorkSpace(index : int){
-            if(index < 0 || index > count) return;
-            let indexDiff = index - currentIndex
-            if(indexDiff > 0)
-                for(let i=0; i<indexDiff; i++)
-                    incrementCurrentIndex();
-            if(indexDiff < 0)
-                for (let i=0; i<-indexDiff; i++)
-                    decrementCurrentIndex();
-        }
-
-        // For every workspace
+        // For every workspaces
         model: HyprService.workspaceModel
-            
 
-            //remove Transition
-            
-            //actual workspace
+        //actual workspace
         delegate : MyCard {
             id: workspace
-            // WorkSpace functionality
-            property int wsId: id //id is available from the model
-            property bool isActive: HyprService.activeWorkspaceId === wsId
-            onIsActiveChanged: {if(isActive ) listView.selectWorkSpace(index);}
-            Component.onCompleted: {if(isActive ) listView.selectWorkSpace(index); }
-            onWidthChanged: {if(isActive ) listView.selectWorkSpace(index);}
-            
-            //animations
-            property SequentialAnimation removeAnimation : SequentialAnimation{
-                PropertyAction { target: workspace; property: "ListView.delayRemove"; value: true }
-                NumberAnimation { target: workspace; property: "width"; to: 0; duration: 300; easing.type: Easing.Linear }
-                PropertyAction { target: workspace; property: "ListView.delayRemove"; value: false }
-            }
-            property SequentialAnimation addAnimation : SequentialAnimation {
-                NumberAnimation { target: workspace; property: "animationWidthScale"; from : 0; to : 1; duration: 300; easing.type: Easing.Linear }
-            }
-            ListView.onRemove: removeAnimation.start()
-            ListView.onAdd : addAnimation.start()
-
             //color
             color : "transparent"
 
@@ -84,31 +54,71 @@ MyCard {
             horizontalPadding: Config.ws_hSpacing
             verticalPadding: Config.workspacePaddin
             //automatic growth on width, fixed on height
-            property real animationWidthScale : 1
-            implicitWidth:  (content.implicitWidth + (horizontalPadding * 2)) * animationWidthScale
+            implicitWidth:  (content.implicitWidth + (horizontalPadding * 2) )* created * alive
             implicitHeight: root.height
+            clip : true
 
-            //Icons
-            Row {
-                spacing : Config.ws_hSpacing
+            // WorkSpace functionality
+            property bool isActive: HyprService.activeWorkspaceId === wsId
+            property bool created : false
+            property bool alive : ttd < 0
+           
+            Component.onCompleted: { created = true;}
+            
+            Behavior on implicitWidth {
+                NumberAnimation {
+                    duration: 250 // duration in milliseconds
+                    easing.type: Easing.Linear // smooth deceleration curve
+                }
+            }
+            Column {
+                //top indicator
+                Rectangle{
+                    color: workspace.isActive ? Colors.accent_fg_primary : Colors.accent
+                    implicitWidth : wsListView.visible ? wsListView.implicitWidth : emptyPlaceHolder.implicitWidth
+                    implicitHeight : 2
+                }
+                //One empty button to swithc to the workspace
                 MyButton {
                 //one empty button
                     id: emptyPlaceHolder
                     normalColor: "transparent"
                     hoverColor: "transparent"
-                    visible : HyprService.windowsForWorkspace(workspace.wsId).length === 0
-                    horizontalPadding : Config.appIconButtonPadding
-                    verticalPadding : Config.appIconButtonPadding
-                    width : Config.wsEmptyWidth
-                    anchors.top : parent.top
-                    anchors.bottom : parent.bottom
+                    visible : !wsListView.visible
+                    horizontalPadding : 0
+                    verticalPadding : 0
+
+                    implicitWidth : 10
+                    implicitHeight : workspace.height - 2
+
                     onClicked: {
                         HyprService.focusWorkspace(wsId);
                     }
                 }
-                Repeater {
-                // for every icon within the workspace
+                //Icons
+                ListView {
+                    id: wsListView
+                    orientation: ListView.Horizontal
+                    clip: true
+                    boundsBehavior: Flickable.StopAtBounds
+                    spacing : 0
                     model: HyprService.windowsForWorkspace(wsId)
+                    implicitWidth : Math.min(contentWidth,mainListView.width * 0.7)
+                    implicitHeight : workspace.height - 4
+
+                    visible : (model.length > 0)
+
+                    currentIndex: {
+                        for (let i = 0; i < model.length; i++)
+                            if (HyprService.isActiveWindow(model[i])) return i;
+                        return -1; // Fallback if none are active
+                    }
+
+                    //transparent highlight to force animations
+                    highlight : Rectangle {
+                        color: "transparent";
+                    }
+                    highlightMoveVelocity : 1000
 
                     delegate: MyButton {
                         id: appIconButton
@@ -116,16 +126,26 @@ MyCard {
                         required property var modelData
                         property bool isActive: HyprService.isActiveWindow(modelData)
 
-                        normalColor: isActive ? Colors.accent : "transparent"
-                        hoverColor: isActive ? Colors.accent : Colors.accent_fg_primary
+                        normalColor: "transparent"
+                        hoverColor: "transparent"
 
-                        horizontalPadding : Config.appIconButtonPadding
-                        verticalPadding : Config.appIconButtonPadding
+                        horizontalPadding : height / 2 * (1-scale)
+                        verticalPadding : 0
+
+                        //animated icon scale
+                        property real scale : (isActive || hovered) ? 1 : 0.6
+                        Behavior on scale {
+                            NumberAnimation {
+                                duration: 500 // duration in milliseconds
+                                easing.type: Easing.OutCubic // smooth deceleration curve
+                            }
+                        }
 
                         //fill vertically, and stay square
-                        anchors.top: parent.top
-                        anchors.bottom: parent.bottom
+                        height : wsListView.implicitHeight
                         width : height
+
+                        anchors.verticalCenter : parent.verticalCenter
 
                         topLeftRadius: Config.appIconButtonBorderRadius
                         topRightRadius: Config.appIconButtonBorderRadius
@@ -154,12 +174,7 @@ MyCard {
                         }
 
                         //content :
-                        Image {
-                            id: icon
-                            anchors.fill: parent
-                            fillMode: Image.PreserveAspectFit
-                            source : "image://icon/" + appIcon
-                        }
+                        IconImage { source : "image://icon/" + appIcon }
                     }
                 }
             }

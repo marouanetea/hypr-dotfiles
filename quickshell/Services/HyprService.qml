@@ -22,6 +22,23 @@ QtObject {
         syncWorkspaces();
     }
 
+    //timer to kill workspaceModel elements
+    property Timer wsKillTimer : Timer {
+        interval: 1000 // 1000ms = 1 second
+        running: true
+        repeat: true
+        onTriggered: {
+            for (let i=workspaceModel.count - 1 ; i>=0 ; i--){
+                let ttd = workspaceModel.get(i).ttd
+                if (ttd > 0)
+                    workspaceModel.setProperty(i, "ttd", ttd-1);
+                else if (ttd === 0)
+                    workspaceModel.remove(i);
+            }
+            
+        }
+    }
+
     // Incremental sync function: adds, removes, or moves items in-place 
     // without destroying existing delegate references.
     function syncWorkspaces() {
@@ -38,30 +55,31 @@ QtObject {
         
         //remove extra workspaces
         for (let i = 0; i<workspaceModel.count; i++){
-            if (workspaceModel.get(i).id<min_ws || workspaceModel.get(i).id>max_ws )
-                workspaceModel.remove(i)
+            if (workspaceModel.get(i).wsId<min_ws || workspaceModel.get(i).wsId>max_ws )
+                workspaceModel.setProperty(i, "ttd", 1)
+            else
+                workspaceModel.setProperty(i, "ttd", -1)
         }
 
-        for (let id = min_ws; id<= max_ws; id++){
+        for (let wsId = min_ws; wsId<= max_ws; wsId++){
             //find where and if to insert new id
             let wsExists = false
             let wsIndex = -1
             for (let i = 0; i<workspaceModel.count; i++){
                 if(workspaceModel.get(i).tokill) continue //ignore dead stuff
-                if (id === workspaceModel.get(i).id){
+                if (wsId === workspaceModel.get(i).wsId){
                     wsExists = true;
                     break;
                 }
-                if(id < workspaceModel.get(i).id)
+                if(wsId < workspaceModel.get(i).wsId)
                     wsIndex = i
             }
-            //console.log("for id = " + id + " we have wsExists = " + wsExists + " and wsIndex = " + wsIndex)
             //Do the insersion
             if(!wsExists){
                 if (wsIndex >= 0)
-                    workspaceModel.insert(wsIndex, {id : id})
+                    workspaceModel.insert(wsIndex, {wsId : wsId, ttd : -1})
                 else
-                    workspaceModel.append({id: id})
+                    workspaceModel.append({wsId: wsId, ttd : -1})
             }
                 
         }
